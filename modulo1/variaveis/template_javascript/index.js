@@ -7,7 +7,7 @@
 
         //Exercício 2 - Algum tipo de erro já que let c não foi declarado.
 
-        //Exercício 3 - o programa executa a média de horas diárias trabalhadas divido pelo salário diário para descobrir o salário-hora. Poderíamos trocar a variável p por horasDiariaTrabalhadas e t por salárioDiário
+        //Exercício 3 - o programa executa a média de horas diárias trabalhadas dividas pelo salário diário para descobrir o salário-hora. Poderíamos trocar a variável p por horasDiariaTrabalhadas e t por salárioDiário
 
 //Exercícios de interpretação de código
 
@@ -25,12 +25,27 @@
 
         //Exercício 2
 
+
+        const resposta1 = prompt  ("você tomou café da manhã?")
+        const resposta2 = prompt ("você almoçou?")
+        const resposta3 = prompt ("você vc jantou?")
+        let perguntas = ("Você ja tomou café?"+resposta1)+("  Você já almoçou?"+resposta2)+(" Você ja jantou?"+resposta3)
+        console.log (perguntas)
+        
+        /*Exercício2.1 -> Seria possível resolver dessa forma que pensei? está errado porque não criei a variável das perguntas?
+
         var cafeDaManha = false
         var almoço = true
         var janta = false
         console.log ("Voce tomou café da manhã?", cafeDaManha)
         console.log ("Voce almoçou?", almoço)
-        console.log ("Voce jantou?", janta)
+        console.log ("Voce jantou?", janta)/*
+         
+
+       
+
+
+
 
         // EXERCICIO 3
 
