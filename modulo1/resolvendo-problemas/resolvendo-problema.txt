@@ -1,0 +1,13 @@
+1º Passo -  ler, reler, prestar atenção em detalhes e em informações para desenvolvimento da solução do problema
+
+2º e 3º Passo - ja é possivel se imaginar inputs e outputs, possíveis nomes de variáveis, um verbo resulta em função, se atentar para as condições.
+
+4º Passo - Esboçar exemplos situacionais onde o código será usado, se necessário faazer diagramas e fluxogramas, usando os proprios exemplos criados testar os inputs e outputs do passo anterior
+
+5º Passo - Não se importar em esboçar um código feio, realmente botar a mão na massa e criar algo mesmo que o código nao esteja bonito, trabalhar é tao importante quanto pensar.
+
+6º Passo - Testar, nem sempre vai rolar de primeira, mas testando da para ter uma idéia rápida de possíveis erros e acertos.
+
+7º Depois de finalizar a parte bruta, refinar o código, melhorar os nomes das váriveis, identar, etc. Não custa deixar o código bonito, legível e o menos verboso o possível. Ver se é possível usar algo para prorrogar a vida útil do código.
+
+ 
