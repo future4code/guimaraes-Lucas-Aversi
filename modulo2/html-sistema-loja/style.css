@@ -1,0 +1,42 @@
+p {
+    color: rgb(0,0,0)
+}
+p {
+    text-align: center;
+}
+
+div {text-align: center; margin: 4 0px;}
+
+.titulo {
+    color: rgb(221, 203, 238)
+}
+
+body {
+    background-image: url(http://fiamapereira.files.wordpress.com/2012/11/degrade-rosa-flor-wallpaper-11605.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+     
+
+}
+
+.baixo {
+    margin-bottom: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 380px;
+    } 
+
+.cursiva{
+    font-size: 35px;
+    font-style: oblique;
+}
+
+.maisbaixo {
+    margin-bottom: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 420px;
+    }
+
+.centralizar {
+    text-align: center;
+}
