@@ -105,6 +105,7 @@ div:last-child {
 table {
     width: 60%;
     font-weight: bold;
+    margin: auto;
 }
 
 td button {
@@ -127,8 +128,13 @@ td button:active{
 .container-do-search {
     margin-top: 20px;
     height: 100px;
-    
+
 }
+
+.centro{
+    text-align: center;
+}
+
 
 
 #back-button {
@@ -139,9 +145,14 @@ td button:active{
     border-radius: 5px;
     font-size: 10px;
     color: black;
+
+    
+    
 }
 
 #back-button:hover {
     background-color: #635a3d
 }
+
+
 
