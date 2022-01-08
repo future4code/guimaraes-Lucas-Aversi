@@ -151,8 +151,15 @@ td button:active{
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: red
 }
 
+#back-button:active {
+    background-color: orangered
+}
+
+.lista ol {
+    list-style: upper-alpha;
+}
 
 
