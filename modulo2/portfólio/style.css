@@ -2,192 +2,579 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif
+    text-decoration: none;
 }
 
-
-.container-card{
-    display: flex;
-
-
-    
-}
-
-.card{
-    background-color:gray;
-    width: 80vh;
-    height: 70.5vh;
-    margin: 3% 1% 0 0;
-    
-    
-}
-
-
-.card-image{
-    background-image: url(./img/html.jpg);
-    background-size: cover;
-    height: 40vh;
-    margin-bottom: 15px;
+ .max-width{
+    max-width: 1300;
+    padding: 0 80px;
+    margin: auto;
 
 }
 
-.card-image2{
-    background-image: url(./img/css.jpg);
-    background-size: cover;
-    height: 40vh;
-    margin-bottom: 15px;
+/* ESTILIZAÇÃO DA NAV BAR */
 
-}
-
-.card-image3{
-    background-image: url(./img/js.jpg);
-    background-size: cover;
-    height: 40vh;
-    margin-bottom: 15px;
-    
-
-}
-
-.contact-main{
- 
-    justify-content: center;
+.navbar{
     width: 100%;
+    z-index: 999;
+    position: absolute;   
+    padding: 30px 0; 
+    font-family: sans-serif;
+    transition: all 0.3s ease;
+     
 }
 
-.contact-main form {
-    display: block;
-    text-align: center; 
-    height: 60vh;
+    
+.navbar .max-width{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
 }
-.contact-main input:hover {
-    background-color: gray;
+
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo a:hover{
+    color: crimson;
+}
+
+.navbar .logo span{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover{
+color: crimson;
+}
+
+/* ESTILIZAÇÃO DA HOME */
+
+.home{
+    display: flex;
+    background-image: url(https://images3.alphacoders.com/115/thumb-1920-1155716.png);
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: serif;
+}
+
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+
+.home .home-content .text-1{
+    font-size: 27px;
+}
+ 
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+
+.home .home-content .text-2 span:hover{
+    color: crimson;
+    transition: color 0.3s ease;
     
 }
 
-.contact-main label:hover {
+
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: crimson;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.home .home-content .text-3 span:hover{
+    color: aqua;
+    transition: color 0.3s;
+    
+}
+
+/* ESTILIZAÇÃO DO ABOUT ME */
+
+.about{
+    font-family:serif;
     background-color: black;
+}
+
+.about .title{
+    position: relative;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
     color: white;
 }
 
-.contact-main button:hover {
-    background-color: gray;
-    color: rgba(255, 10, 100, 0.5);
+.about .title::after{
+    content: "Sobre Mim";
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 5px;
+    background: black;
+    transform:translateX(-50%);
+}
+
+.about .title:hover::after{
+    color: white;
+    transition: color 0.3s;
+  
 }
 
 
-.contact-main h2 {
+.about .title::before{
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    left: 575px;
+    width: 180px;
+    height: 3px;
+    background: black;
+    transform:translateX(-50%);
+    background: white;
+}
+
+.about .title:hover::before{
+    background-color: crimson;
+    transition: color 0.3s;
+  
+}
+
+.about .title:hover{
+    color: crimson;
+  
+}
+
+
+.about .about-content {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    font-family:serif
+    align-items: center;
+    justify-content: space-between;
+    flex: wrap;
 }
 
-.contact-main p {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    font-family:serif
+.about .about-content .column {
+    width: 50%;
 }
 
-.sidetext{
+
+
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit:fill;
+    border-radius: 20px;
+}
+
+.about .about-content .right {
+    width: 50% ;
+    border: solid 1px white;
+    padding: 30px;
+
+}
+
+.about .about-content .right:hover {
+    border-color: crimson;
+
+}
+
+.about .about-content .right .text {
+    font-size: 25px ;
+    font-weight: 600;
+    margin-bottom: 10px ;
     text-align: center;
-    
-    max-width: 55%;
-    align-items: end;
-    justify-items: end;
-    margin: 25% 100px auto auto;
-    border: 2px;
-    border-style:solid
-    
+    color: white;
+
 }
 
-.work-main{
+.about .about-content .right .text span {
+    color: crimson;
+
+}
+
+.about .about-content .right .text span:hover {
+    color:cyan;
+    transition: color 0.3s ease;
+
+}
+
+.about .about-content .right .text p {
+    text-align: justify;
+    color: white;
+}
+
+
+/* all similar content */
+section{
+    padding: 100px 0;
     width: 100%;
-    height: 100%;
-    margin: 0% auto auto auto;
-    background-size: cover;
+    height: 90%;
 }
 
-button:hover{
-    background-color: rgba(255, 10, 100, 0.5);
+/* ESTILIZAÇÃO da WORK  */
+
+.work{
+    font-family:serif;
+    background-color: black;
+    }
+
+.work .title{
+    position: relative;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+    color: white;
 }
 
-table{
+.work .title:hover{
+    color: crimson;
+    transition: color 0.3s;
+}
+
+
+.work .title::after{
+    content: "O que eu faço";
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    background-color: black;
+    padding: 5px;
+    transform:translateX(-50%);
+}
+
+.work .title:hover::after{
+    color: white;
+    transition: color 0.3s;
+  
+}
+
+.work .title::before{
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    left: 575px;
+    width: 180px;
+    height: 3px;
+    background: white;
+    transform:translateX(-50%);
+    
+}
+
+.work .title:hover::before{
+    background-color: crimson;
+    transition: color 0.3s;
+  
+}
+
+
+
+.work .work-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: wrap;
+}
+
+.work .work-content .column {
+    width: 50%;
+}
+
+
+
+.work .work-content .left img{
+    height: 450px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.work .work-content .right img{
+    height: 100px;
+    width: 570px;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+.work .work-content .right button{
+    height: 20px;
+    width: 570px;
+    border-radius: 20px;
+    border: solid 1px white;
+    margin-bottom: 4px;
+    background: black;
+    color: white;
+
+}
+
+.work .work-content .right button:hover{
+    color:crimson;
+    border-color: crimson;
+    transition: color 0.3s;
+}
+
+.work .work-content .right {
+    width: 50% ;
+    display: inline-block
+}
+
+.work .work-content .right span {
+    color: white;
+}
+
+.work .work-content .right .bars {
+    margin-bottom: 15px;
+}
+
+.work .work-content .right .info span:hover {
+color: crimson;
+}
+
+.work h3{
+    color: white;
+    font-size: 24pt;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.work h3:hover{
+    color: crimson;
+
+}
+
+
+.work .work-content .right .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.work .work-content .right .span {
+    font-weight: 500;
+    font-size: 18px;  
+}
+
+.work .work-content .right .line {
+    height: 5px;
+    width: 100%;
+    background: white;
+}
+
+.work .work-content .right .line::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width:22.5%;
+    left: 50%;
+    top: 1000;
+    background: crimson;
+}
+
+.work .work-content .right .html::before{
+    width: 22.5%;
+}
+
+.work .work-content .right .css::before{
+    width: 29.25%;
+}
+
+.work .work-content .right .js::before{
+    width: 18%;
+}
+
+
+
+
+
+
+/* ESTILIZAÇÃO DA CONTACT-ME */
+
+.contact{
+    font-family:serif;
+    background-color: black;
+}
+
+.contact-content{
     display: flex;
     justify-content: center;
-}
-
-
-header{
-    display: flex;
-    background-color:rgba(0, 0, 0, 5)
-}
-
-header a{
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    margin: auto;
-    display: inline-flex;
-    justify-content: end;
-    
-}
-
-header a:hover{
-    color: rgba(255, 10, 100, 0.5);
-
-}
-
-header img{
-    width: 110px;
-}
-
-header h2{
-    color: rgba(255, 255, 255, 0.5);
-    display: flex;
     align-items: center;
 }
 
-header h2:hover{
-    color: rgba(255, 10, 100, 0.5);
+.contact .title{
+    position: relative;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+    color: white;
 }
 
-main {
-    height: 40vw;
+.contact .title:hover{
+    color: crimson;
+    transition: color 0.3s;
 }
 
+
+.contact .title::after{
+    content: "Fale Comigo!!!";
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 5px;
+    background: #fff;
+    transform:translateX(-50%);
+    background-color: black;
+}
+
+.contact .title:hover::after{
+    color: white;
+    transition: color 0.3s;
+  
+}
+
+
+.contact .title::before{
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    left: 575px;
+    width: 180px;
+    height: 3px;
+    background: black;
+    transform:translateX(-50%);
+    background: white;
+}
+
+.contact .title:hover::before{
+    background-color: crimson;
+    transition: color 0.3s;
+  
+}
+
+
+
+.contact fieldset{
+    border: 0;
+}
+
+.contact input, textarea, button {
+    border-radius: 50px;
+}
+
+.campo{
+    margin-bottom: 1em;
+}
+
+.campo label{
+    margin-bottom: 0.2em;
+    color: white;
+    display: block;
+}
+
+.contact fieldset.grupo .campo{
+    float: left;
+    margin-right: 1em;
+    
+}
+
+.campo input[type="text"], .campo input[type="email"], .campo textarea{
+    padding: 0.2em;
+    border: 1px solid crimson;
+    box-shadow: 2px 2px 2px red;
+    display: block;
+}
+
+.campo input:focus, campo textarea:focus {
+    background-color: black;
+    color: crimson;
+
+}
+
+.contact button{
+    font-size:  1.2em;
+    background-color: crimson;
+    border: 0;
+    margin-bottom: 1em;
+    color:white;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px crimson;
+    text-shadow: 1px 1px 1px black;
+    position: absolute;
+    bottom: -385%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.contact button:hover{
+    background-color: white;
+    color: crimson;
+    box-shadow: inset 2px 2px 2px white;
+}
+
+
+/* FOOTER */
 
 footer {
     color: white;
-    background-color:rgba(0, 0, 0, 5);
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
+    background-color:black;
     text-align: center;
-    height: 5.5vh;
+    height: 10vh;
 
 }
 
-footer >a{
-    display: auto;
+footer div a{
     text-decoration: none;
-    margin: auto;
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: 50px;
 }
-footer >a:hover{
+footer div a:hover{
     color: rgba(255, 10, 100, 0.5)
 }
 
-
-footer >p:hover{
+footer div p:hover{
     color: rgba(255, 10, 100, 0.5);
 }
 
-textarea:hover{
-    background-color: gray;
-}
 
-textarea:focus{
-    background-color: red;
-    color: white;
-}
+
+
+
