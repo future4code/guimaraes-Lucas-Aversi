@@ -77,13 +77,11 @@ main{
 }
 
 .card{
-    border: 1px solid black;
     width: 35.3vh;
-    height: 160px;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     text-align: center;
-    box-shadow: 2px 2px 5px darkgray;
     padding-bottom: 10px;
 }
 
@@ -114,8 +112,8 @@ main{
 }
 
 iframe{
-    width: 1024px;
-    height: 500px;
+    width: 800px;
+    height: 400px;
     padding-left: 100px;
     padding-top: 3px;
 }
@@ -153,4 +151,59 @@ footer{
     align-items: center;
 
     
+}
+
+/* AQUI COMEÇA A RESPONSIVIDADE */
+@media screen and (min-width: 0px) and (max-width: 800px){
+    
+    body{
+        min-height: 100vh;
+        min-width: 100vw
+    }
+    .pagina{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        padding-top: 30px;
+    }
+    
+    .card{
+        width: 25vw;
+        height: 8vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5px;
+    }
+    .card a{
+
+        text-decoration: none;
+        color: black;  
+    }
+    
+    .card h4{
+    
+        margin-top: 1px;
+        font-size: 0.8em;
+    }
+    
+  
+    
+    .card video{
+        width: 25vw;
+        height: 12vh;
+        padding-top: 1px;
+
+    }
+    
+    
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px){
+    .pagina{
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        grid-template-rows: repeat(2 , 1fr);
+        padding-top: 30px;
+    }
 }
