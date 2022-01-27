@@ -12,8 +12,7 @@
  */
 
     console.log ("Bem vindo ao jogo de Blackjack!")
-    let game = confirm ("Gostaria de Iniciar uma nova rodada?") 
-    
+
       let primeiraCartaDoUsuário = comprarCarta()
       let segundaCartaDoUsuário = comprarCarta()
       let primeiraCartaDoComputador = comprarCarta()
@@ -42,6 +41,3 @@
     }
    
 
-
-
-    

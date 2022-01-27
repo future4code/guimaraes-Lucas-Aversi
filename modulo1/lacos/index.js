@@ -5,36 +5,19 @@
     //  1 -    Pelo que entendi ele fará somas consecutivas dado o ultimo valor registrado percorrendo um loop de 0 a 4
     
     //  2  A - Irá imprimir os numeros da lista maiores que 18
-    //     B - 
+
     
     //  3 - Seriam impressas 4 linhas, onde cada uma teria uma um asterisco +1 para cada linha, ex: 1* primeira linha, 2* segunda linha, 3* terceira linha e 4* quarta linha
     
     // EXERCÍCIO DE ESCRITA DE CÓDIGO
 
     //  1 -
-                let perguntaAoUsuário = Number(prompt("Quantos animaiszinhos de estimação você tem?"))
-                let arrayDePets = []
-                if (perguntaAoUsuário === 0){
-                console.log ("Que pena, você pode adotar um bichinho")}
-                else {
-                  for (let loop = 0; loop < perguntaAoUsuário; loop++){ 
-                  let nomeDosPets = prompt(`Digite o nome do seus pets`)
-                  arrayDePets.push(nomeDosPets)
+
 
                   }
                 } 
             
-            console.log(arrayDePets)
-    // 2 - 
-                let arrayOriginal = [10, 15, 20, 25, 30, 35, 40, 45, 50]
-    
-    //      A-
-                for(let numero of arrayOriginal){
-                    console.log(numero)
-                }
-    
-    //      B- 
-                for (let numero of arrayOriginal){
+
                     let divisaoPorDez = numero/10
                     console.log (divisaoPorDez)
                 }
