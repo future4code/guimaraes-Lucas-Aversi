@@ -1,0 +1,209 @@
+/* ESTILIZAÇÃO GERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.conteiner{
+    display: grid;
+    grid-template-columns: 15vw 3fr;
+    grid-template-rows: 8vh 87vh 5vh;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer"
+
+}
+
+
+/* ESTILIZAÇÃO HEADER */
+
+
+
+header{
+    background-color: #800f2f;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img{
+    width: 30px;
+}
+
+.logo{
+    display:flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.logo h2{
+    padding-left: 12px;
+    color: wheat;
+}
+
+.lupa img{
+    padding-top: 11px;
+}
+
+.lupa input{
+    padding-top: 14px ;
+    font-size: 1em;
+    background-color: wheat;
+}
+
+
+
+/* ESTILIZAÇÃO MAIN */
+
+main{
+    background-color: #ff4d6d;
+    grid-area: main;
+/*     grid-template-columns: 15vw 1fr 1fr 1fr 1fr;
+    grid-template-rows: 8vh 87vh 5vh;
+    grid-template-areas: ". card1 card2 card3 card4"
+    ". card5 card6 card7 card8 "
+    ". . . . "; */
+}
+
+.pagina{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(2 , 1fr);
+    gap:50px;
+    padding: 70px 50px;
+}
+
+.card{
+    width: 35.3vh;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.card a{
+
+    text-decoration: none;
+    color: black;  
+    position: relative;
+}
+
+.card h4{
+
+    margin-top: 5px;
+}
+
+.card  p{
+    padding-left: 30px; 
+}
+
+
+.card img{
+    width: 30vh
+}
+
+.card video{
+    width: 35vh;
+    height: 20vh;
+}
+
+iframe{
+    width: 800px;
+    height: 400px;
+    padding-left: 100px;
+    padding-top: 3px;
+}
+
+.player h4{
+    text-align: center;
+    font-size: 2em;
+    border: 8px solid black;
+}
+
+
+/* ESTILIZAÇÃO NAV */
+nav{
+    background-color:#c9184a;
+    grid-area: nav;
+}
+
+.menu a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 7px 0;
+    color: wheat;
+    border: solid wheat 2px;
+}
+
+
+/* ESTILIZAÇÃO FOOTER */
+
+footer{
+    background-color: #ff758f;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+/* AQUI COMEÇA A RESPONSIVIDADE */
+@media screen and (min-width: 0px) and (max-width: 800px){
+    
+    body{
+        min-height: 100vh;
+        min-width: 100vw
+    }
+    .pagina{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        padding-top: 30px;
+    }
+    
+    .card{
+        width: 25vw;
+        height: 8vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5px;
+    }
+    .card a{
+
+        text-decoration: none;
+        color: black;  
+    }
+    
+    .card h4{
+    
+        margin-top: 1px;
+        font-size: 0.8em;
+    }
+    
+  
+    
+    .card video{
+        width: 25vw;
+        height: 12vh;
+        padding-top: 1px;
+
+    }
+    
+    
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px){
+    .pagina{
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        grid-template-rows: repeat(2 , 1fr);
+        padding-top: 30px;
+    }
+}
