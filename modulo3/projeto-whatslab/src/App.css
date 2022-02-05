@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center ;
+}
+ .App div{
+   height: 75vh;
+   background-color: aqua;
+   width: 50.0vw;
+   display: flex;
+   border: thin   solid black;
+   min-width: 524px;  
+ }
+ 
+ .App button{
+  height: 2.69vh;
+  width: 11vw;
+  border: none
+}
+
+.App input{
+  height: 2vh;
+}
+
+.Chat{
+  display: flex;
+  align-items: end;
+}
+
+.input1{
+  size: 200px;
+  flex: 1
+}
+
+.Chat__Vertical{
+  display: flex;
+  flex-direction: column;
+}
+
