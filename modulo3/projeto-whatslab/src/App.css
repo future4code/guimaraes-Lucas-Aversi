@@ -1,0 +1,70 @@
+/* .App {
+  text-align: center;
+  display: flex;
+  justify-content: center ;
+}
+ .App div{
+   background-color: aqua;
+   width: 50.0vw;
+   display: flex;
+   border: thin   solid black;
+   min-width: 524px;  
+   
+ }
+ 
+ .App button{
+  height: 2.69vh;
+  width: 11vw;
+  border: none
+}
+
+.App input{
+  height: 2vh;
+}
+
+.Chat{
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+
+}
+
+.input1{
+  size: 200px;
+  flex: 1
+}
+
+.Chat__Vertical{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  border: solid black thin;
+}
+
+.Chat__Vertical li{
+padding-left: 10px;
+word-wrap: break-word;
+}
+
+
+
+.Chat__Footer{
+  display: flex;
+  flex:1;
+  height: 500px;
+
+}
+
+.Chat__Footer button{
+  height: 25px;
+  width: 100px;
+}
+
+
+
+li{
+    list-style-type:none
+}
+
+ */
