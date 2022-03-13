@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export const Divplay = styled.div`
-  width: 100vw;
+  width: 98vw;
   display: flex;
   justify-self: center;
   align-self: center;
@@ -11,10 +11,12 @@ export const Divplay = styled.div`
 
 export const Divplay2 = styled.div`
   display: flex;
-  margin: 0 auto;
-  justify-items: center;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   flex-direction: column;
+
 `;
 
 export const Logo = styled.img`

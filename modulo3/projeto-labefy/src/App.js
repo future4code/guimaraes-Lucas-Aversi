@@ -9,6 +9,9 @@ export const Main = styled.div`
   height: auto;
   min-height: 100vh;
   background: black;
+  background-image: url(https://wallpaperaccess.com/full/1124156.jpg);
+  background-size: fit-content;
+      
 `;
 
 export default class App extends React.Component {

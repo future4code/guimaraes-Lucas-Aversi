@@ -20,6 +20,8 @@ const DivGeral = styled.div`
   box-shadow: inset 0 0 1em #00b4d8, 0 0 0.5em cyan;
   width: 30vw;
   height: auto;
+  
+  
 `;
 
 const DivPlaylist = styled.div`
@@ -35,6 +37,9 @@ const DivPlaylist = styled.div`
       box-shadow: 0 0 10px #00b4d8, 0 0 15px #ade8f4, 0 0 30px #00b4d8;
       transition-delay: 0.2s;
     };
+
+    
+    
 `;
 
 
@@ -127,6 +132,7 @@ const DivCreate = styled.div`
   font-weight: bold;
   font-size: 1.5rem;
   margin: 0 auto;
+  
 `;
 
 export const URL =
