@@ -14,7 +14,6 @@ const Principal = styled.div`
   box-shadow: inset 0 0 1em #00b4d8, 0 0 0.5em cyan;
   width: 25vw;
   height: auto;
-
 `;
 
 const Title = styled.h2`
@@ -23,28 +22,51 @@ const Title = styled.h2`
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  font-size: 5.2vh;
+  font-size: 5.0vh;
   margin: 0 auto;
   display: table;
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
-  -webkit-text-fill-color: linear;  color: #90e0ef;
-  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: linear;  color: #90e0ef;  
 `;
+
+const SubTitle = styled.h2`
+  padding: 1rem;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 4.0vh;
+  margin: 0 auto;
+  display: table;
+  background: -webkit-linear-gradient(#ade8f4, #00b4d8, #90e0ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: linear;  color: #90e0ef;  
+`;
+
 const InputAdd = styled.input`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  :focus{
-    background: cyan;
-    outline: 0;
-  }
+  overflow: hidden;
+  transition: 2s;
+
+    :hover{
+      background:#00b4d8;
+      box-shadow: 0 0 10px #00b4d8, 0 0 15px #ade8f4, 0 0 30px #00b4d8;
+      transition-delay: 0.2s;
+    }
+    :focus{
+      background: cyan;
+      outline: 0;
+    }
 `;
+
 const ButtonAdd = styled.button`
   width: 10vh;
   border-radius: 1px;
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: gradient;  color: #90e0ef;
   box-shadow: inset 0 0 0.10em #00b4d8, 0 0 0.5em cyan;
   border-radius: 5px;
@@ -53,23 +75,19 @@ const ButtonAdd = styled.button`
   align-items: center;
   margin: auto;
 `;
-const Adicionar = styled.div`
-  margin: 0 auto;
-  display: table;
-  padding: 1rem;
-  font-weight: bold;
-`;
+
 const Audio = styled.audio`
   margin: 0 0;
   text-align: center;
   cursor: pointer;
   height: 4vh;
 `;
+
 const ButtonVoltar = styled.button`
   width: 10vh;
   border-radius: 1px;
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: gradient;  color: #90e0ef;
   box-shadow: inset 0 0 0.10em #00b4d8, 0 0 0.5em cyan;
   border-radius: 5px;
@@ -78,21 +96,41 @@ const ButtonVoltar = styled.button`
   align-items: center;
   margin: auto;;
 `;
+
 const InputDiv = styled.div`
+  border: solid cyan thin;
+  border-image: linear-gradient(75deg, #00b4d8, #ade8f4, #00b4d8) 0.5;
   display: flex;
   place-content: center;
   padding: 2vh 0;
   font-size: 3vh;
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: gradient;  color: #90e0ef;
+  width: 23vw;
+  overflow: auto;
+  transition: 2s;
+
+    :hover{
+      background:#00b4d8;
+      box-shadow: 0 0 10px #00b4d8, 0 0 15px #ade8f4, 0 0 30px #00b4d8;
+      transition-delay: 0.2s;
+    };
+
+    &::-webkit-scrollbar { 
+    display: none
+    };
+
+    span{
+      color: turquoise;
+    };
 `;
 
 const ButtonDelet = styled.button`
   width: 10vh;
   border-radius: 1px;
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: gradient;  color: #90e0ef;
   box-shadow: inset 0 0 0.10em #00b4d8, 0 0 0.5em cyan;
   border-radius: 5px;
@@ -185,7 +223,7 @@ export default class Playlists extends React.Component {
       return (
         <InputDiv>
           <div key={track.id}>
-            <div><span>{track.artist} -</span> {track.name}</div>
+            <div><span>{track.artist}</span> - {track.name}</div>
             <Audio controls>
             <source src={track.url} type={'audio/mp3'}/>
             </Audio>
@@ -199,10 +237,7 @@ export default class Playlists extends React.Component {
     return (
       <Principal>
         <Title>Deep Ocean</Title>
-        <Adicionar>
-          Adicionar Música
-          <br />
-        </Adicionar>
+        <SubTitle>{this.props.selectPlaylist.name}</SubTitle>
         <InputAdd
           type="text"
           placeholder="música"
@@ -237,7 +272,6 @@ export default class Playlists extends React.Component {
         <ButtonVoltar onClick={this.props.renderPagina}>Voltar</ButtonVoltar>
         <br />
         <br />
-
 
       </Principal>
     );

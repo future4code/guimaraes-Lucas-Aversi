@@ -6,17 +6,15 @@ export const Divplay = styled.div`
   display: flex;
   justify-self: center;
   align-self: center;
-  flex-direction: column;
-  
-
+  flex-direction: column; 
 `;
+
 export const Divplay2 = styled.div`
   display: flex;
   margin: 0 auto;
   justify-items: center;
   text-align: center;
   flex-direction: column;
-
 `;
 
 export const Logo = styled.img`
@@ -25,6 +23,7 @@ export const Logo = styled.img`
   justify-content: center;
   margin: 0 auto;
 `;
+
 export const Nome = styled.h1`
   padding: 1rem;
   background: black;
@@ -34,7 +33,7 @@ export const Nome = styled.h1`
   font-size: 7vh;
   margin: 0 auto;
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
 
@@ -50,6 +49,7 @@ export const Slogan = styled.h2`
     -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
+
 export const Button = styled.button`
   width: 15%;
   border-radius: 4px;

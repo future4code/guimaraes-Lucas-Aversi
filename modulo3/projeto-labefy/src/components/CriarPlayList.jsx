@@ -6,11 +6,11 @@ import { Divplay } from "./Login";
 
 const Title = styled.h1`
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: linear;  color: #90e0ef;
 `
 
-const PlaylistDiv = styled.div`
+const DivGeral = styled.div`
   display: flex;
   margin: auto;
   justify-items: center;
@@ -20,16 +20,41 @@ const PlaylistDiv = styled.div`
   box-shadow: inset 0 0 1em #00b4d8, 0 0 0.5em cyan;
   width: 30vw;
   height: auto;
-
 `;
+
+const DivPlaylist = styled.div`
+  border: solid cyan thin;
+  border-image: linear-gradient(75deg, #00b4d8, #ade8f4, #00b4d8) 0.5;
+  width: 26vw;
+  margin: auto;
+  overflow: hidden;
+  transition: 2s;
+
+    :hover{
+      background:#00b4d8;
+      box-shadow: 0 0 10px #00b4d8, 0 0 15px #ade8f4, 0 0 30px #00b4d8;
+      transition-delay: 0.2s;
+    };
+`;
+
+
 const InputCriar = styled.input`
   display: flex;
   flex-direction: column;
   margin: auto;
+  overflow: hidden;
+  transition: 2s;
+
+    :hover{
+      background:#00b4d8;
+      box-shadow: 0 0 10px #00b4d8, 0 0 15px #ade8f4, 0 0 30px #00b4d8;
+      transition-delay: 0.2s;
+    };
+
   :focus{
     background: cyan;
     outline: 0;
-  }
+  };
 `;
 
 const H2 = styled.h2`
@@ -41,10 +66,9 @@ const H2 = styled.h2`
   font-size: 5.2vh;
   margin: 0 auto;
   background: -webkit-linear-gradient(#00b4d8, #90e0ef, #ade8f4);
-    -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  `
-;
+  `;
 
 const ButtonDelet = styled.button`
   width: 10vh;
@@ -86,11 +110,11 @@ const ButtonDeslog = styled.button`
   align-items: center;
   margin: auto;
   border: none;
-  :hover{
-    background: cyan;
-    color: black;
     
-  }
+    :hover{
+      background: cyan;
+      color: black;    
+  };
 `;
 const DivCreate = styled.div`
   padding: 1rem;
@@ -186,35 +210,30 @@ export default class CriarPlayList extends React.Component {
           selectPlaylist={this.state.selectPlaylist}
         />
       );
-    }
-
-    
+    }  
 
     const playlistsRenderizadas = this.state.playlists.map((playlist) => {
       return (
         <Divplay>
+          <DivPlaylist>
           <DivCreate
             key={playlist.id}
-            onClick={() => this.rendertracks(playlist)}
-          >
-            {playlist.name}
+            onClick={() => this.rendertracks(playlist)}>
+          {playlist.name}
+          <br />
           </DivCreate>
-
-          <ButtonDelet onClick={() => this.deletarPlaylist(playlist.id)}>
-            deletar
+          <ButtonDelet onClick={() => this.deletarPlaylist(playlist.id)}>deletar
           </ButtonDelet>
           <br />
-
+          </DivPlaylist>      
         </Divplay>
       );
     });
 
     return (
-      <PlaylistDiv>
+      <DivGeral>
         <ButtonDeslog onClick={this.props.irParaLogin}>Retornar</ButtonDeslog>
-
         <H2>Deep Ocean</H2>
-
         <InputCriar
           type="text"
           placeholder="Nome da Playlist"
@@ -222,20 +241,13 @@ export default class CriarPlayList extends React.Component {
           onChange={this.getNomePlaylist}
         />
         <br />
-
-
         <ButtonCreate onClick={this.createPlaylist}>criar</ButtonCreate>
-
         <br />
         <br />
         <Title>Minhas Playlists</Title>
-
-
-
         {playlistsRenderizadas}
         <br />
-
-      </PlaylistDiv>
+      </DivGeral>
     );
-      }
+  }
 }
