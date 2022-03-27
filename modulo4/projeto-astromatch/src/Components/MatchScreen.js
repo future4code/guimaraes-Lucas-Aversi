@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 export const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lucas-aversi-guimaraes`
 
+
 const DivGeral = styled.div`
 display: flex;
 width: 20vw;

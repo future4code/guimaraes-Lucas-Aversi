@@ -47,6 +47,20 @@ text-shadow:
     0 0 102px black,
     0 0 121px red;
 
+    :hover{
+box-shadow: inset 0 0 5em wheat, 0 0 10em purple;
+color: crimson;
+text-shadow:
+    0 0 7px red,
+    0 0 21px red,
+    0 0 42px red,
+    0 0 82px red,
+    0 0 92px red,
+    0 0 102px red,
+    0 0 121px red;
+
+}
+
 `
 
 
@@ -67,7 +81,7 @@ const App = () => {
   const onChangeMainScreen = () => setShowScreen("principal");
   const onChangeMatchScreen = () => setShowScreen("match");
 
-  const deletaMatch = () => {
+  const deleteMatch = () => {
     axios
       .put(`${url}/clear`)
       .then((res) => setShowScreen("principal"))
@@ -78,7 +92,7 @@ const App = () => {
     <Container>
       <DivGeral>
         {escolheTela()}
-        <ButtonClear onClick={deletaMatch}> impar Matches</ButtonClear>
+        <ButtonClear onClick={deleteMatch}> Limpar Matches</ButtonClear>
         <br/>
       </DivGeral>
     </Container>

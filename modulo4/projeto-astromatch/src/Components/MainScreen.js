@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 export const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lucas-aversi-guimaraes`
 
+
 const Img = styled.img`
 width: 31vw;
 height: 50vh;
@@ -47,6 +48,19 @@ text-shadow:
     0 0 102px black,
     0 0 121px red;
 
+:hover{
+box-shadow: inset 0 0 5em crimson, 0 0 10em red;
+color: white;
+text-shadow:
+    0 0 7px black,
+    0 0 21px black,
+    0 0 42px black,
+    0 0 82px black,
+    0 0 92px black,
+    0 0 102px black,
+    0 0 121px red;
+
+}
 `
 const DislikeButton = styled.button`
 width: 10vw;
@@ -62,9 +76,24 @@ text-shadow:
     0 0 102px black,
     0 0 121px red;
 
+    :hover{
+box-shadow: inset 0 0 5em wheat, 0 0 10em purple;
+color: crimson;
+text-shadow:
+    0 0 7px red,
+    0 0 21px red,
+    0 0 42px red,
+    0 0 82px red,
+    0 0 92px red,
+    0 0 102px red,
+    0 0 121px red;
+
+}
+
 `
 const Name = styled.span`
-font-size: 1.7rem;
+font-family: Hurricane;
+font-size: 2.7rem;
 height: 8vh;
 color: pink;
 text-shadow:
@@ -92,6 +121,7 @@ text-shadow:
 `
 const Bio = styled.span`
 font-size: 1.115rem;
+font-family: Playfair Display;
 height: auto;
 text-align: center;
 color: wheat;
@@ -106,15 +136,16 @@ text-shadow:
 
 `
 const ButtonSeeMatches = styled.button`
+font-size: 2rem;
+font-family: Hurricane;
 width: 10vw;
-height: 4vh;
+height: 6vh;
 display: flex;
 justify-content: center;
 align-items: center;
 margin:auto;
 margin-top: 5px;
 box-shadow: inset 0 0 3em crimson, 0 0 0.5em crimson;
-font-size: 1.0rem;
 color: white;
 text-shadow:
     0 0 7px crimson,
@@ -124,6 +155,20 @@ text-shadow:
     0 0 92px black,
     0 0 102px black,
     0 0 121px red;
+
+    :hover{
+box-shadow: inset 0 0 5em wheat, 0 0 10em purple;
+color: crimson;
+text-shadow:
+    0 0 7px red,
+    0 0 21px red,
+    0 0 42px red,
+    0 0 82px red,
+    0 0 92px red,
+    0 0 102px red,
+    0 0 121px red;
+
+}
 `
 
 const MainScreen = (props) => {
