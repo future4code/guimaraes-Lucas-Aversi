@@ -7,6 +7,7 @@ import LoginPage from '../Pages/LoginPage'
 import ApplicationFormPage from '../Pages/ApplicationForm'
 import CreateTripPage from '../Pages/CreateTripPage'
 import TripDetailPage from '../Pages/TripDetailsPage'
+import ErrorPage from '../Pages/ErrorPage'
 
 const Router = () => {
     return (
@@ -21,6 +22,8 @@ const Router = () => {
                 <Route path='login/adminPage' element={<AdminPage/>} />
                 <Route path='login/adminPage/createTrip' element={<CreateTripPage/>} />
                 <Route path='login/adminPage/detailPage' element={<TripDetailPage/>} />
+                <Route path='*' element={<ErrorPage/>} />
+
 
             </Routes>
 
