@@ -9,17 +9,13 @@ color: white;
 display: flex;
 justify-content: center;
 align-items: center;
-
-
 `
 
 const LogoDiv = styled.div`
 display: flex;
-
 `
 
 const Title = styled.h1`
-
 `
 
 
@@ -28,7 +24,7 @@ const Header = () => {
     <Headers>   
       <LogoDiv>
         <Title>
-          SPACE X
+          LABEX 
         </Title>
         
       </LogoDiv>

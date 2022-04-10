@@ -19,7 +19,7 @@ height: 10%;
 color: black;
 border: solid 1px wheat;
 opacity: 50%;
-
+border-radius: 50px;
 
 `
 const NavBtn2 = styled.button`
@@ -28,6 +28,8 @@ height: 10%;
 color: black;
 border: solid 1px wheat;
 opacity: 50%;
+border-radius: 50px;
+
 
 `
 
@@ -65,7 +67,7 @@ function HomePage() {
 
       <Home>
         <Card1>
-          <NavBtn onClick={goToLogin}>login</NavBtn>
+          <NavBtn onClick={goToLogin}>AREA ADM</NavBtn>
         </Card1>
 
         <Card2>

@@ -10,4 +10,4 @@ export const listTripPage = (navigate) => {navigate('listTrip')}
 
 export const applicationToTrip = (navigate) => {navigate('applicationToTrip')}
 
-export const adminPageadminPage = (navigate) => {navigate('adminPage')}
+export const adminPage = (navigate) => {navigate('adminPage')}
