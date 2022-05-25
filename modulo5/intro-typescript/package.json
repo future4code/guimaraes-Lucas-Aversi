@@ -1,0 +1,24 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "startex1": "tsc && node ./build/ex1.js",
+    "startex2": "tsc && node ./build/ex2.js",
+    "startex3": "tsc && node ./build/ex3.js",
+    "startex4": "tsc && node ./build/ex4.js",
+    "startex5": "tsc && node ./build/ex5.js",
+    "desafio": "tsc && node ./build/desafio.js",
+
+
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.7.2"
+  }
+}
