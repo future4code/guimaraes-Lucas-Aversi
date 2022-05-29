@@ -1,7 +1,7 @@
 const mostraTipo = (data:any) =>{
     const type = typeof data
-    return (`${type}  `)
 
+    return `${type}`
 }
 
 console.log(mostraTipo(true)) 
