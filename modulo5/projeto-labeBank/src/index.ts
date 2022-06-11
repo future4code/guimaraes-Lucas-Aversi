@@ -26,8 +26,7 @@ type conta ={
   cpf:string|number,
   accType: string,
   saldo:number,
-  extrato:transaction[]
-  
+  extrato:transaction[]  
 }
 
 
@@ -56,6 +55,10 @@ const contas :conta[]=[
       valor:200,
       data: "25/02/1991"
 
+    },{
+      tipo:"credito",
+      valor:1000,
+      data: "11/02/1991"
     }], 
   },
 /* 
@@ -129,7 +132,7 @@ app.post("/contas", (req: Request, res: Response) => {
   res.status(201).send([... contas, data])
 })
 
-app.get("/saldo/:cpf",(req: Request, res: Response)=>{
+app.get("/saldo/:cpf/:name",(req: Request, res: Response)=>{
     
   const cpf = (req.params.cpf)
 
@@ -150,7 +153,7 @@ app.get("/saldo/:cpf",(req: Request, res: Response)=>{
 
 })
 console.log("ok")
-
+  
 
 
 
