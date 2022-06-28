@@ -97,17 +97,3 @@ app.post("/task", async (req: Request, res: Response) => {
   }
 
 })
-
-
-
-//ver atores teste
-app.get("/actors", async (req, res):Promise<void> => {
-  try{
-    const getActors = await connection.raw(`SELECT * FROM Actor`)
-    res.status(200).send(getActors)
-  }catch(e:any){
-    console.log(e.message)
-    
-    res.status(500).send(e.message)
-  }  
-})
