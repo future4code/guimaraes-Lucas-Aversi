@@ -16,3 +16,15 @@ Content-Type: application/json
     "password": "the way is gonna be"
 }
 ###
+//PRODUCTS ENDPOINTS
+
+//2 - CREATE NEW PRODUCT
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Joystick Futurista",
+    "price": 500.00,
+    "img_url": "https://images.hdqwalls.com/wallpapers/playstation-joystick.jpg"
+}
+###
