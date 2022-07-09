@@ -2,11 +2,17 @@ import { Request, Response} from "express"
 import {connection} from "../data/connection"
 
 export async function getAllUsers(req: Request,res: Response): Promise<void> {
+    let statusCode = 500
     try {
+
         const users = await connection("labecommerce_users")
         .select("*")
+        if(!users.length){
+            statusCode = 404
+            res.status(statusCode).send("Not found any data")
+        }
         res.status(200).send(users)
-    } catch (err) {
-        res.status(500).send(err)
+    } catch(e) {
+        res.status(statusCode).send(e)
     }
 }

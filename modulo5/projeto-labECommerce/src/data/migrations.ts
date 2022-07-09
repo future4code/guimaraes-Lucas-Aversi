@@ -34,22 +34,22 @@ const createTables = () => connection
       
 
 `)
-   .then(() => { console.log("Tabelas criadas") })
+   .then(() => { console.log("Created Tables") })
    .catch(printError)
 
 const insertUsers = () => connection("labecommerce_users")
    .insert(users)
-   .then(() => { console.log("Usuários criados") })
+   .then(() => { console.log("table Users has been populated") })
    .catch(printError)
 
 const insertProducts = () => connection("labecommerce_products")
    .insert(products)
-   .then(() => { console.log("Produtos criados") })
+   .then(() => { console.log("table Products has been populated") })
    .catch(printError)
 
 const insertPurchases = () => connection("labecommerce_purchases")
    .insert(purchases)
-   .then(() => { console.log("Compras inseridas na tabela de compras") })
+   .then(() => { console.log("table Purchases has been populated") })
    .catch(printError)
 
 const closeConnection = () => { connection.destroy() }

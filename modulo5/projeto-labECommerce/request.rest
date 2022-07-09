@@ -1,2 +1,18 @@
+//USERS ENDPOINTS
+
+//1 - GET ALL USERS
+
 GET     http://localhost:3003/users 
+###
+
+//2 - CREATE NEW USER
+
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "Stand By Me",
+    "email": "nobodyknows@hotmail.com",
+    "password": "the way is gonna be"
+}
 ###
