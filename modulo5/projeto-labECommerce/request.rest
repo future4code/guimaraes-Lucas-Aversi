@@ -1,11 +1,11 @@
-////USERS ENDPOINTS
+//////////////////////// ENDPOINTS USERS
 
-//1 - GET ALL USERS
+    //1 - GET ALL USERS
 
 GET     http://localhost:3003/users 
 ###
 
-//2 - CREATE NEW USER
+    //2 - CREATE NEW USER
 
 POST    http://localhost:3003/users
 Content-Type: application/json
@@ -16,14 +16,14 @@ Content-Type: application/json
     "password": "the way is gonna be"
 }
 ###
-////PRODUCTS ENDPOINTS
+//////////////////////// ENDPOINTS PRODUCTS
 
-//1 - GET ALL PRODUCTS
+    //1 - GET ALL PRODUCTS
 
 GET     http://localhost:3003/products 
 ###
 
-//2 - CREATE NEW PRODUCT
+    //2 - CREATE NEW PRODUCT
 POST    http://localhost:3003/products
 Content-Type: application/json
 
@@ -34,9 +34,15 @@ Content-Type: application/json
 }
 ###
 
-////PURCHASE ENDPOINTS
+//////////////////////// ENDPOINTS PURCHASES
 
-//2 - CREATE NEW PURCHASE
+    //1 - GET PURCHASE BY ID
+
+GET http://localhost:3003/users/4d3bc362-f838-43d6-9e06-5f3883873f74/purchases
+###
+
+    //2 - CREATE NEW PURCHASE
+
 POST    http://localhost:3003/purchases
 Content-Type: application/json
 
