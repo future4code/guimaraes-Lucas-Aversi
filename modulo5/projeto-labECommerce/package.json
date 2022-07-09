@@ -1,26 +1,29 @@
 {
-  "name": "aula-knex",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "tsc && node ./build/index.js",
-    "dev-start": "ts-node-dev ./src/index.ts"
-  },
-  "author": "Labenu",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "knex": "^0.95.2",
-    "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.10",
-    "@types/express": "^4.17.11",
-    "@types/knex": "^0.16.1",
-    "@types/node": "^14.14.35",
-    "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.3"
-  }
+   "name": "aula-back-filtros",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start": "tsc && node ./build/index.js",
+      "dev": "tsnd --transpile-only --ignore-watch node_modules ./src/index.ts",
+      "build": "tsc",
+      "migrations": "tsnd ./src/data/migrations.ts"
+   },
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "cors": "^2.8.5",
+      "dotenv": "^8.2.0",
+      "express": "4.17.0",
+      "knex": "^0.21.1",
+      "mysql": "^2.18.1"
+   },
+   "devDependencies": {
+      "@types/cors": "^2.8.8",
+      "@types/express": "4.17.0",
+      "@types/knex": "^0.16.1",
+      "@types/node": "^13.7.7",
+      "ts-node-dev": "^1.0.0-pre.44",
+      "typescript": "^3.8.3"
+   }
 }

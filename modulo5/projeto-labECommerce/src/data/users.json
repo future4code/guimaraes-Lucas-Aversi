@@ -1,0 +1,21 @@
+[
+
+	{
+		"id" : "4d3bc362-f838-43d6-9e06-5f3883873f74",
+		"name" : "charles",
+		"email" : "charles@email.com",
+		"password" : "$2a$12$p5LXq11CjvbSB9XYfoGUn./nRGFiYR7Y.zEuw1i7JUUCXn.5S3Qxq"
+	},
+	{
+		"id" : "5a7e728a-3afa-47d6-850d-0fba7786e6a7",
+		"name" : "Bernardo",
+		"email" : "bernardo@gmail.com",
+		"password" : "$2a$12$sblz4a9FgJ6T59pWVaUL6uxHkjumzxuc0mlEVqF6HN54RyTYAosn6"
+	},
+	{
+		"id" : "62f8edd5-c522-44c3-92a7-bd3b6303465d",
+		"name" : "Michael Scott",
+		"email" : "michael@email.com",
+		"password" : "$2a$12$zeA2ptIrGbR5UYjbp.nbAuHgXDnDxV9EqL6TTnGHVcv/vYy3B0rEa"
+	}
+]

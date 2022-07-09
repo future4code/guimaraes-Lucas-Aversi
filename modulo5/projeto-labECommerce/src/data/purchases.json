@@ -1,0 +1,16 @@
+[
+	{
+		"id" : "1",
+		"user_id" : "4d3bc362-f838-43d6-9e06-5f3883873f74",
+		"products_id" : 1,
+        "quantity" : 3,
+        "total_price": 6000.00
+	},	{
+        "id" : "2",
+		"user_id" : "4d3bc362-f838-43d6-9e06-5f3883873f74",
+		"products_id" : 2,
+        "quantity" : 1,
+        "total_price": 3000.00
+	}
+	
+]

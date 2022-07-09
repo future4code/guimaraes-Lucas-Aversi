@@ -1,0 +1,14 @@
+[
+	{
+		"id" : "1",
+		"name" : "Computador",
+		"price" : 2000.00,
+		"img_url" : "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ."
+	},	{
+		"id" : "2",
+		"name" : "Televisão 50 polegadas",
+		"price" : 3000.00,
+		"img_url" : "https://cdn.leroymerlin.com.br/products/smart_tv_led_50_polegadas_4k_com_comando_de_voz_tcl_50p8m_1566901170_e85a_600x600.jpeg"
+	}
+	
+]
