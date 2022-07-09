@@ -1,4 +1,4 @@
-//USERS ENDPOINTS
+////USERS ENDPOINTS
 
 //1 - GET ALL USERS
 
@@ -7,7 +7,7 @@ GET     http://localhost:3003/users
 
 //2 - CREATE NEW USER
 
-POST http://localhost:3003/users
+POST    http://localhost:3003/users
 Content-Type: application/json
 
 {
@@ -16,10 +16,15 @@ Content-Type: application/json
     "password": "the way is gonna be"
 }
 ###
-//PRODUCTS ENDPOINTS
+////PRODUCTS ENDPOINTS
+
+//1 - GET ALL PRODUCTS
+
+GET     http://localhost:3003/products 
+###
 
 //2 - CREATE NEW PRODUCT
-POST http://localhost:3003/products
+POST    http://localhost:3003/products
 Content-Type: application/json
 
 {
