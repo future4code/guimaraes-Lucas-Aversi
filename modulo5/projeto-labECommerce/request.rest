@@ -33,3 +33,16 @@ Content-Type: application/json
     "img_url": "https://images.hdqwalls.com/wallpapers/playstation-joystick.jpg"
 }
 ###
+
+////PURCHASE ENDPOINTS
+
+//2 - CREATE NEW PURCHASE
+POST    http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id": "4d3bc362-f838-43d6-9e06-5f3883873f74",
+    "products_id": 1,
+    "quantity": 2
+}
+###

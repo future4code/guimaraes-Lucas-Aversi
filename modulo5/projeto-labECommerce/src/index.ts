@@ -5,8 +5,11 @@ import { getAllUsers} from "./endpoints/getAllUsers";
 import { createNewUser } from "./endpoints/createNewUser";
 import { createNewProduct } from "./endpoints/createNewProduct";
 import { getAllProducts } from "./endpoints/getAllProducts";
+import { createNewPurchase } from "./endpoints/createNewPurchase";
 
 app.get("/users", getAllUsers)
 app.post("/users", createNewUser)
 app.post("/products", createNewProduct)
 app.get("/products", getAllProducts )
+app.post("/purchases", createNewPurchase)
+
