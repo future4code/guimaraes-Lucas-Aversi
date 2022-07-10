@@ -12,7 +12,8 @@ app.get("/products", getAllProducts )
 app.get("/users", getAllUsers)
 app.get("/users/:user_id/purchases", purchasesByUser) 
 
-app.post("/users", createNewUser)
 app.post("/products", createNewProduct)
 app.post("/purchases", createNewPurchase)
+app.post("/users", createNewUser)
+
 

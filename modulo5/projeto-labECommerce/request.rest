@@ -20,7 +20,7 @@ Content-Type: application/json
 
     //1 - GET ALL PRODUCTS
 
-GET     http://localhost:3003/products 
+GET      http://localhost:3003/products?search=te
 ###
 
     //2 - CREATE NEW PRODUCT
