@@ -199,3 +199,31 @@ abstract class Place {
   console.log(`firstResidence has ${firstResidence.getDwellersQuantity()} dwellers and zipcode is ${firstResidence.getCep()}`)
   console.log(`firstCommmerce has ${firstCommerce.getFloorsQuantity()} floors and zipcode is ${firstCommerce.getCep()}`)
   console.log(`firstIndustry has ${firstIndustry.getMachinesQuantity()} machines and zipcode is ${firstIndustry.getCep()}`)
+
+    ////Exercício 4
+
+
+    class ResidentialClient extends Residence implements Client {
+        constructor(
+          public name: string,
+          public registrationNumber: number,
+          public consumedEnergy: number,
+          private cpf: string,
+          residentsQuantity: number,
+          cep: string
+        ) {
+          super(residentsQuantity, cep);
+        }
+      
+        public getCpf(): string {
+          return this.cpf;
+        }
+      
+        public calculateBill(): number {
+          return this.consumedEnergy * 0.75;
+        }
+      }
+
+      const firstResidentialClient :ResidentialClient = new ResidentialClient("Aversi", 7, 250,"383.383.383-38",5,"222.222.222.07")
+
+      console.log(`Residential client ${firstResidentialClient.name} registration number ${firstResidentialClient.registrationNumber} your total bill is ${firstResidentialClient.calculateBill()} reais`)
