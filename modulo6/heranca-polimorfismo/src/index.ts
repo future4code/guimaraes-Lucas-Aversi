@@ -256,6 +256,39 @@ abstract class Place {
 
           const firstCommercialClient :CommercialClient = new CommercialClient("Aversi LTDA", 777, 1500,"555555555555/1000-25",5,"222.222.222.07")
 
-          console.log(`${firstCommercialClient.name}, CNPJ ${firstCommercialClient.getCnpj}, your bill this month is ${firstCommercialClient.calculateBill()} 
-          `)
           console.log(firstCommercialClient)
+
+
+          console.log(`${firstCommercialClient.name}, CNPJ ${firstCommercialClient.getCnpj()}, your bill this month is ${firstCommercialClient.calculateBill()} 
+          `)
+
+
+          //EXERCICIO 6
+
+          class IndustrialClient extends Industry implements Client {
+            constructor(
+              public name: string,
+              public registrationNumber: number,
+              public consumedEnergy: number,
+              private industryNumber: string,
+              machinesQuantity: number,
+              cep: string
+            ) {
+              super(machinesQuantity, cep);
+            }
+          
+            public getIndustryNumber(): string {
+              return this.industryNumber;
+            }
+          
+            public calculateBill(): number {
+              return this.consumedEnergy * 0.53;
+            }
+          }
+
+          const firstIndustrialClient :IndustrialClient = new IndustrialClient("Aversi ENTERPRISES", 4, 10000,"777",5,"06851-500")
+
+          console.log(firstIndustrialClient)
+
+          console.log(`${firstIndustrialClient.name}, CNPJ ${firstIndustrialClient.getIndustryNumber()}, your bill this month is ${firstIndustrialClient.calculateBill()} 
+          `)
