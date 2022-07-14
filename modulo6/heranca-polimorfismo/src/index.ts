@@ -1,0 +1,194 @@
+//////HERANÇA E POLIMORFISMO
+
+//HERANÇA
+
+////Exercício 1~
+
+//A- Não seria possível imprimir a senha tendo em vista que está como private e nenhum metodo para torna-la publica foi criado. 
+
+//B - Uma vez
+class User {
+  private id: string;
+  private email: string;
+  private name: string;
+  protected password: string;
+
+  constructor(
+		id: string,
+		email: string,
+		name: string,
+		password: string
+	){
+		console.log("Chamando o construtor da classe User")
+		this.id = id
+		this.email = email
+		this.name = name 
+		this.password = password
+	}
+
+	public getId(): string {
+		return this.id
+	}
+
+	public getEmail(): string {
+		return this.email
+	}
+
+	public getName(): string {
+		return this.name
+	}
+    public interoduceYourself(): string {
+        return `Olá, bom dia eu sou o ${this.name}!`
+    }
+}
+const firstUser: User = new User("1", "Aversi@gmail.com", "Aversi", "suaTia");
+console.log(firstUser.getEmail(), firstUser.getId(), firstUser.getName())
+
+////Exercício 2
+
+// A- Uma vez.
+
+// B- Duas vezes, acredito que seja a primeira pela chamado do constructor da class user, e outra vez no constructor da class customer, ja que customer extende ao User.
+
+
+class Customer extends User {
+    public purchaseTotal: number = 0;
+    private creditCard: string;
+  
+    constructor(
+      id: string,
+      email: string,
+      name: string,
+      password: string,
+      creditCard: string
+    ) {
+      super(id, email, name, password);
+      console.log("Chamando o construtor da classe Customer");
+      this.creditCard = creditCard;
+    }
+  
+    public getCreditCard(): string {
+      return this.creditCard;
+    }
+    public getPurchases(): number {
+        return this.purchaseTotal;
+      }
+      public getpw(): string {
+        return this.password;
+      }
+  }
+
+  const firstCustomer: Customer = new Customer("001","customer1@email.com","customer1","pw123","455-665-225")
+
+////Exercício 3
+
+// A- 
+console.log("firstCostumer ID=>",firstCustomer.getId())
+console.log("firstCostumer EMAIL=>",firstCustomer.getEmail())
+console.log("firstCostumer NAME=>",firstCustomer.getName())
+console.log("firstCostumer PASSWORD=>",firstCustomer.getpw())
+console.log("firstCostumer CREDITCARD=>",firstCustomer.getCreditCard())
+console.log("firstCostumer PRUCHASES=>",firstCustomer.getPurchases())
+
+//B- Não, o dado password esta encapsulado como private, apenas a classe consegue acessar esse tipo dado, não suas filhas. Corrigiríamos esse "problema" trocando private por protected na class User.
+
+
+////Exercício 4
+
+// Feito.
+
+////Exercício 5
+
+// Feito.
+
+    ////POLIMORFISMO      
+    
+////Exercício 1
+
+// A - Consegui imprimir todas
+
+interface Client {
+    name: string;
+    registrationNumber: number;
+    consumedEnergy: number;
+  
+    calculateBill(): number;
+  }
+
+  const client: Client = {
+    name: "Goli",
+    registrationNumber: 1,
+    consumedEnergy: 100,
+  
+    calculateBill: () => {
+      const newBill = client.consumedEnergy*3.75
+      return newBill;
+    }
+  }
+
+  console.log(`Client name is ${client.name}`)
+  console.log(`Client registration is ${client.registrationNumber}`)
+  console.log(`Client has consumed a total of ${client.consumedEnergy} KWH`)
+  console.log(`Client total bill is ${client.calculateBill()} reais`)
+
+
+  ////Exercício 2
+
+  // A- Ela me diz que não é possivel criar uma instancia de uma classe abstrata.
+  // B - trocar o encapsulador abstract?
+
+abstract class Place {
+  constructor(protected cep: string) {}
+
+	public getCep(): string {
+		return this.cep;
+  }
+}
+
+  ////Exercício 3
+  
+
+  class Residence extends Place {
+    constructor(
+      private dwellersQuantity: number,
+  
+      cep: string
+    ) {
+      super(cep);
+    }
+    
+    public getDwellersQuantity(): number {
+      return this.dwellersQuantity
+    }
+  }
+  
+  class     Commerce extends Place {
+    constructor(
+      private floorsQuantity: number,
+      // Refere-se à quantidade de andares do lugar
+  
+      cep: string
+    ) {
+      super(cep);
+    }
+  
+    public getFloorsQuantity(): number {
+      return this.floorsQuantity;
+    }
+  }
+  
+  class Industry extends Place {
+    constructor(
+      private machinesQuantity: number,
+      // Refere-se à quantidade de máquinas do local
+  
+      cep: string
+    ) {
+      super(cep);
+    }
+  
+    public getMachinesQuantity(): number {
+      return this.machinesQuantity;
+    }
+  }
+
