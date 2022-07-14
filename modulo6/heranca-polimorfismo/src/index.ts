@@ -192,3 +192,10 @@ abstract class Place {
     }
   }
 
+  const firstResidence: Residence = new Residence(5,"222,222,222-22")
+  const firstCommerce: Commerce = new Commerce(10,"222,555,555-22")
+  const firstIndustry: Industry = new Industry(2,"777,222,888-22")
+
+  console.log(`firstResidence has ${firstResidence.getDwellersQuantity()} dwellers and zipcode is ${firstResidence.getCep()}`)
+  console.log(`firstCommmerce has ${firstCommerce.getFloorsQuantity()} floors and zipcode is ${firstCommerce.getCep()}`)
+  console.log(`firstIndustry has ${firstIndustry.getMachinesQuantity()} machines and zipcode is ${firstIndustry.getCep()}`)
