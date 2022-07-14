@@ -227,3 +227,35 @@ abstract class Place {
       const firstResidentialClient :ResidentialClient = new ResidentialClient("Aversi", 7, 250,"383.383.383-38",5,"222.222.222.07")
 
       console.log(`Residential client ${firstResidentialClient.name} registration number ${firstResidentialClient.registrationNumber} your total bill is ${firstResidentialClient.calculateBill()} reais`)
+
+          ////Exercício 5
+
+          //A - as semelhanças sao os dados da interface Client
+          //B - as diferenças sao os dados herdados, uma vem de residence a outra de commerce, logo uma herda residentsQuantity e a outra floorQuantity além da contar ser mais barata para o cliente comercial
+    
+          class CommercialClient extends Commerce implements Client {
+            constructor(
+              public name: string,
+              public registrationNumber: number,
+              public consumedEnergy: number,
+              private cnpj: string,
+              residentsQuantity: number,
+              cep: string
+            ) {
+              super(residentsQuantity, cep);
+            }
+          
+            public getCnpj(): string {
+              return this.cnpj;
+            }
+          
+            public calculateBill(): number {
+              return this.consumedEnergy * 0.53;
+            }
+          }
+
+          const firstCommercialClient :CommercialClient = new CommercialClient("Aversi LTDA", 777, 1500,"555555555555/1000-25",5,"222.222.222.07")
+
+          console.log(`${firstCommercialClient.name}, CNPJ ${firstCommercialClient.getCnpj}, your bill this month is ${firstCommercialClient.calculateBill()} 
+          `)
+          console.log(firstCommercialClient)
