@@ -101,6 +101,35 @@ console.log("firstCostumer PRUCHASES=>",firstCustomer.getPurchases())
 
 // Feito.
 
+////Exercício 6
+
+  class Employee extends User{
+    protected admissionDate: Date
+    protected baseSalary:number
+
+    constructor(id: string,
+        email: string,
+        name: string,
+        password: string,
+        admissionDate: Date,
+        baseSalary: number)
+        { super(id, email, name, password);
+            this.admissionDate = admissionDate;
+            this.baseSalary = baseSalary;
+            }
+    public getAdmissionDate(): Date {
+		return this.admissionDate
+	    }
+
+	public getBaseSalary(): number {
+		return this.baseSalary
+	    }
+
+  }
+  const firstEmployee :Employee= new Employee("1","Lucas@email","Lucas","123",new Date(2022,0o1,26), 5000)
+  console.log(firstEmployee)
+
+
     ////POLIMORFISMO      
     
 ////Exercício 1
