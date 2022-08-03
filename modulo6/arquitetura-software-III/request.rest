@@ -1,0 +1,19 @@
+POST http://localhost:3003/user/create
+
+
+{
+    "email": "email@email.com",
+    "name": "teste",
+    "password": "23432535"
+}
+
+###
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "A Volta dos que nao foram",
+    "description": "Ele prometeu que ia voltar, não prometeu? Pena ainda não ter ido ",
+    "duration_in_minutes": 95,
+    "year_of_release": 2225
+}
