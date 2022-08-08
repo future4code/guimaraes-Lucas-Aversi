@@ -1,10 +1,10 @@
 import app from "./app";
-import express, { Response, Request } from "express";
-import { buscarUser } from "./endpoints/buscarUser";
+import { userRouter } from "./routes/userRouter";
 
 
 /* ____________________________________ENDPOINTS____________________________________ */
 
 
 // CONSULTAR DOCENTES
-app.get('/users', buscarUser)
+app.use("/users", userRouter)
+
