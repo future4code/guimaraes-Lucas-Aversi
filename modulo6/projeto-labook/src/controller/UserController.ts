@@ -23,7 +23,7 @@ export class UserController {
     }
   }
 
-  async getAllUserController (req: Request, res: Response){
+  async getAll(req: Request, res: Response){
     try {
       const userBusiness = new UserBusiness()
       const users = await userBusiness.getUserBusiness()
