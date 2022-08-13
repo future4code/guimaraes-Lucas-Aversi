@@ -1,0 +1,58 @@
+[
+	{
+		"id" : "1",
+		"photo" : "primeiroPostPhoto",
+		"description" : "descrição do primeiro post",
+		"type" : "normal",
+        "created_at": "26/02/1991",
+        "author_id": "1"
+	},
+    {
+		"id" : "2",
+		"photo" : "segundoPostPhoto",
+		"description" : "descrição do segundo post",
+		"type" : "normal",
+        "created_at": "18/01/2022",
+        "author_id": "1"
+	},
+    {
+		"id" : "3",
+		"photo" : "terceiroPostPhoto",
+		"description" : "descrição do terceiro post",
+		"type" : "normal",
+        "created_at": "10/02/2021",
+        "author_id": "3"
+	},
+    {
+		"id" : "4",
+		"photo" : "quartoPostPhoto",
+		"description" : "descrição do quarto post",
+		"type" : "event",
+        "created_at": "05/09/2022",
+        "author_id": "2"
+	},
+    {
+		"id" : "5",
+		"photo" : "quintoPostPhoto",
+		"description" : "descrição do quinto post",
+		"type" : "event",
+        "created_at": "22/05/2022",
+        "author_id": "2"
+	},
+    {
+		"id" : "6",
+		"photo" : "sextoPostPhoto",
+		"description" : "descrição do sexto post",
+		"type" : "event",
+        "created_at": "22/05/2022",
+        "author_id": "1"
+	},
+    {
+		"id" : "7",
+		"photo" : "setimoPostPhoto.jpg",
+		"description" : "descrição do sétimo post",
+		"type" : "normal",
+        "created_at": "21/05/2022",
+        "author_id": "1"
+	}
+]
