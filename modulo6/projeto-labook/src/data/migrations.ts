@@ -21,6 +21,15 @@ CREATE TABLE IF NOT EXISTS labook_posts(
       author_id VARCHAR(255),
       FOREIGN KEY (author_id) REFERENCES labook_users (id)
    ); 
+
+   CREATE TABLE IF NOT EXISTS labook_friendship(
+      sender VARCHAR(255) PRIMARY KEY,
+      FOREIGN KEY (sender) REFERENCES labook_users (id)
+      reciever VARCHAR(255),
+      FOREIGN KEY (reciever) REFERENCES labook_users (id)
+   ); 
+
+
    `)
    .then(() => { console.log("As 2 tabelas foram criadas!") })
    .catch(printError);
