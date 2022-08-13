@@ -35,3 +35,21 @@ Content-Type: application/json
 
 GET     http://localhost:3003/posts/all
 ###
+
+
+
+
+  //1 - make friends
+
+POST http://localhost:3003/friendship/3/makeFriend
+Content-Type: application/json
+
+{
+    "reciever": "5a7e728a-3afa-47d6-850d-0fba7786e6a7"
+}
+###
+
+  //1 - GET ALL FRIENDSHIP
+
+GET     http://localhost:3003/friendship/all
+###

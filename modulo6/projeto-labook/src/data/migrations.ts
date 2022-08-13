@@ -25,7 +25,7 @@ const createTables = () => connection
       FOREIGN KEY (author_id) REFERENCES labook_users (id)
    );
 
-   CREATE TABLE IF NOT EXISTS labook_friendship(
+   CREATE TABLE IF NOT EXISTS labook_friendships(
       idRequest VARCHAR(255) PRIMARY KEY,
       sender VARCHAR(255) NOT NULL,
       reciever VARCHAR(255) NOT NULL,
@@ -48,7 +48,7 @@ const insertPosts = () => connection("labook_posts")
 .then(() => { console.log("Tabela posts foi populada com sucesso!!") })
 .catch(printError);
 
-const insertFriendship = () => connection("labook_friendship")
+const insertFriendship = () => connection("labook_friendships")
 .insert(friendship)
 .then(() => { console.log("Tabela friendship foi populada com sucesso!!") })
 .catch(printError);
