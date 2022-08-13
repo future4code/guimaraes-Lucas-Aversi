@@ -10,9 +10,28 @@ POST http://localhost:3003/users/create
 Content-Type: application/json
 
 {
-    "name": "aversi",
-    "email": "aversi@email.com",
-    "password": "asdfdas"
+    "name": "liliane aparecida",
+    "email": "lilianeap@email.com",
+    "password": "liliane"
 }
 
 ####
+
+  
+  //1 - make POSTS
+
+POST http://localhost:3003/posts/create
+Content-Type: application/json
+
+{
+    "photo": "liliane.jpg",
+    "description": "trabalhando na em acácia",
+    "type": "normal",
+    "author_id":"36fa5aaa-8697-4b69-a2e6-32abc2a4e78c"
+}
+###
+
+  //1 - GET ALL POSTS
+
+GET     http://localhost:3003/posts/all
+###

@@ -70,7 +70,7 @@ export class Posts {
     photo: string,
     description: string,
     type: string,
-    createdAt: string,
-    authorId: string,
+    created_at: string,
+    author_id: string,
   }
   
