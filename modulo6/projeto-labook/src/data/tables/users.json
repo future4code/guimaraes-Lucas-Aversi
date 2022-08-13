@@ -1,5 +1,23 @@
 [
 	{
+		"id" : "1",
+		"name" : "Lucas Aversi",
+		"email" : "laversi@email.com",
+		"password" : "$2a$12$pcwQNPILKqJPtBOe4eHfeOc6L2kEs6n57IMiToJ6WJrIEj5zRz6wa"
+	},
+	{
+		"id" : "2",
+		"name" : "João",
+		"email" : "joão@email.com",
+		"password" : "123"
+	},
+	{
+		"id" : "3",
+		"name" : "carlos",
+		"email" : "carlos@email.com",
+		"password" : "sharkaugusto"
+	},
+	{
 		"id" : "0a4147ad-30dd-4547-9e35-94e655d02f13",
 		"name" : "Jonas",
 		"email" : "Jonas@email.com",
