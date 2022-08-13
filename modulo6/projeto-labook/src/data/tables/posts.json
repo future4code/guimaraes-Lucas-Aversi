@@ -4,7 +4,7 @@
 		"photo" : "primeiroPostPhoto",
 		"description" : "descrição do primeiro post",
 		"type" : "normal",
-        "created_at": "26/02/1991",
+        "created_at": "2022-02-26",
         "author_id": "1"
 	},
     {
@@ -12,7 +12,7 @@
 		"photo" : "segundoPostPhoto",
 		"description" : "descrição do segundo post",
 		"type" : "normal",
-        "created_at": "18/01/2022",
+        "created_at": "2022-05-02",
         "author_id": "1"
 	},
     {
@@ -20,7 +20,7 @@
 		"photo" : "terceiroPostPhoto",
 		"description" : "descrição do terceiro post",
 		"type" : "normal",
-        "created_at": "10/02/2021",
+        "created_at": "2020-01-11",
         "author_id": "3"
 	},
     {
@@ -28,7 +28,7 @@
 		"photo" : "quartoPostPhoto",
 		"description" : "descrição do quarto post",
 		"type" : "event",
-        "created_at": "05/09/2022",
+        "created_at": "2012-02-21",
         "author_id": "2"
 	},
     {
@@ -36,7 +36,7 @@
 		"photo" : "quintoPostPhoto",
 		"description" : "descrição do quinto post",
 		"type" : "event",
-        "created_at": "22/05/2022",
+        "created_at": "2000-01-01",
         "author_id": "2"
 	},
     {
@@ -44,7 +44,7 @@
 		"photo" : "sextoPostPhoto",
 		"description" : "descrição do sexto post",
 		"type" : "event",
-        "created_at": "22/05/2022",
+        "created_at": "1999-12-20",
         "author_id": "1"
 	},
     {
@@ -52,7 +52,7 @@
 		"photo" : "setimoPostPhoto.jpg",
 		"description" : "descrição do sétimo post",
 		"type" : "normal",
-        "created_at": "21/05/2022",
+        "created_at": "2013-11-20",
         "author_id": "1"
 	}
 ]
