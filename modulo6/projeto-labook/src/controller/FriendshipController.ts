@@ -23,6 +23,17 @@ export class FriendshipController {
         }
     };
 
+    public deleteFriendship = async(req: Request, res:Response)=>{
+        try{
+            const {idRequest} = req.body
+            const friendshipBusiness = new FriendshipBusiness();
+            await friendshipBusiness.deletedFriendshipBusiness(idRequest)
+            res.status(201).send("Os de verdade eu sei quem são!")    
+        }
+        catch{
+    
+        }
+      }
 
   async getAll(req: Request, res: Response){
     try {
@@ -35,4 +46,6 @@ export class FriendshipController {
       res.status(400).send(error.message);
     }
   }
+
+
 }

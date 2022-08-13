@@ -53,3 +53,13 @@ Content-Type: application/json
 
 GET     http://localhost:3003/friendship/all
 ###
+
+  //1 - DELETE FRIENDSHIP
+
+POST      http://localhost:3003/friendship/deleteFriend
+Content-Type: application/json
+
+{
+    "idRequest": "316757a3-ec6a-44bb-963d-7be0d54f70dc"
+}
+###

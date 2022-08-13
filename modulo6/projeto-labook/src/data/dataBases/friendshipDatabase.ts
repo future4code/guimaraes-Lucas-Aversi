@@ -2,7 +2,7 @@
 
 
 
-import { friendship, Friendship } from "../../model/Friendship";
+import { friendship, Friendship, friendshipInputDTO } from "../../model/Friendship";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class FriendshipDatabase extends BaseDatabase {
@@ -22,5 +22,10 @@ export class FriendshipDatabase extends BaseDatabase {
     const friendship = await FriendshipDatabase.connection(FriendshipDatabase.TABLE_NAME).select()
 
     return friendship
+  }
+
+  async deletedFriendship(idRequest:string){
+    const deletedFriendship = await FriendshipDatabase.connection(FriendshipDatabase.TABLE_NAME).select().where("idRequest", idRequest).del()
+    return deletedFriendship
   }
 }
