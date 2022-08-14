@@ -9,4 +9,6 @@ const postController = new PostController()
 
 postRouter.post("/create", postController.create)
 postRouter.get("/all", postController.getAll)
+postRouter.get("/:id/getPosts", postController.getById)
+
 

@@ -4,7 +4,7 @@ import { generateId } from "../services/idGenerator";
 import { creationMoment } from "../services/dateGenerator";
 
 export class PostsBusiness{
-    public create = async (input:postsInputDTO):Promise<void>=>{
+    public createPostBusiness = async (input:postsInputDTO):Promise<void>=>{
         const {photo, description,type,author_id}=input
 
         const id = generateId()
@@ -28,4 +28,11 @@ export class PostsBusiness{
         const posts = await postDB.getAllPosts();
         return posts
     }
+
+    async getPostById (id:string):Promise<any>{
+        const postDB = new PostDatabase();
+        const postById = await postDB.getById(id);
+        return postById
+    }
+
 }

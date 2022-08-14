@@ -25,16 +25,15 @@ export class FriendshipBusiness{
 
 
     async getfriendshipBusiness (): Promise<Friendship[]>{
-
         const friendshipDB = new FriendshipDatabase();
         const friendship = await friendshipDB.getfriendshipAll();
         return friendship
     }
 
-    async  deletedFriendshipBusiness (idRequest:string):Promise<any>{
+    async deletedFriendshipBusiness (idRequest:string):Promise<any>{
         const friendshipDB = new FriendshipDatabase();
-        const deletedFriendship = await friendshipDB.deletedFriendship(idRequest)
-        
+        const deletedFriendship = await friendshipDB.deletedFriendship(idRequest)        
         return deletedFriendship
     }
+
 }

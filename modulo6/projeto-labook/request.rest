@@ -1,10 +1,11 @@
-  
+//_________________________________________USER ENDPOINTS______________________________________//
+
   //1 - GET ALL USERS
 
 GET     http://localhost:3003/users/all
 ###
 
-// 2 - CREATE NEW USER
+  // 2 - CREATE NEW USER
 
 POST http://localhost:3003/users/create
 Content-Type: application/json
@@ -16,9 +17,10 @@ Content-Type: application/json
 }
 
 ####
+//_________________________________________POST ENDPOINTS______________________________________//
 
   
-  //1 - make POSTS
+  //1 - MAKE A POST
 
 POST http://localhost:3003/posts/create
 Content-Type: application/json
@@ -31,15 +33,19 @@ Content-Type: application/json
 }
 ###
 
-  //1 - GET ALL POSTS
+  //2 - GET ALL POSTS
 
 GET     http://localhost:3003/posts/all
 ###
 
+  //2.1 - GET POST BY ID
 
+GET     http://localhost:3003/posts/3/getPosts
+###
 
-
-  //1 - make friends
+//_________________________________________FRIENDSHIP ENDPOINTS______________________________________//
+ 
+  //1 - MAKE FRIEND
 
 POST http://localhost:3003/friendship/3/makeFriend
 Content-Type: application/json
@@ -49,17 +55,17 @@ Content-Type: application/json
 }
 ###
 
-  //1 - GET ALL FRIENDSHIP
+  //2 - GET ALL FRIENDSHIP
 
-GET     http://localhost:3003/friendship/all
+GET http://localhost:3003/friendship/all
 ###
 
-  //1 - DELETE FRIENDSHIP
+  //3 - DELETE FRIENDSHIP
 
-POST      http://localhost:3003/friendship/deleteFriend
+POST http://localhost:3003/friendship/deleteFriend
 Content-Type: application/json
 
 {
-    "idRequest": "316757a3-ec6a-44bb-963d-7be0d54f70dc"
+    "idRequest": "4"
 }
 ###

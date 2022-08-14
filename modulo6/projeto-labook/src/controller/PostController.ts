@@ -16,7 +16,7 @@ export class PostController {
         author_id
 
       }
-      await postsBusiness.create(post);
+      await postsBusiness.createPostBusiness(post);
 
       res.status(201).send({ message: "Postado!" });
 
@@ -31,6 +31,20 @@ export class PostController {
       const posts = await postsBusiness.getPostBusiness()
 
       res.status(201).send(posts)
+      
+    } catch (error:any) {
+      res.status(400).send(error.message);
+    }
+  }
+
+  async getById(req: Request, res: Response){
+    try {
+      const {id}=req.params
+
+      const postsBusiness = new PostsBusiness()
+      const postsById = await postsBusiness.getPostById(id)
+
+      res.status(201).send(postsById)
       
     } catch (error:any) {
       res.status(400).send(error.message);

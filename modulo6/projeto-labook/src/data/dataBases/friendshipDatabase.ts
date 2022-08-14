@@ -9,6 +9,7 @@ export class FriendshipDatabase extends BaseDatabase {
   private static TABLE_NAME = "labook_friendships";
 
   async create(friendship: friendship): Promise<void> {
+    
     await FriendshipDatabase.connection
       .insert({
         idRequest: friendship.idRequest,
