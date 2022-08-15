@@ -26,10 +26,10 @@ POST http://localhost:3003/posts/create
 Content-Type: application/json
 
 {
-    "photo": "liliane.jpg",
+    "photo": "tokenEterno.jpg",
     "description": "trabalhando na em acácia",
     "type": "normal",
-    "author_id":"36fa5aaa-8697-4b69-a2e6-32abc2a4e78c"
+    "author_id":"1"
 }
 ###
 
@@ -40,7 +40,7 @@ GET     http://localhost:3003/posts/all
 
   //2.1 - GET POST BY ID
 
-GET     http://localhost:3003/posts/3/getPosts
+GET     http://localhost:3003/posts/2/getPosts
 ###
 
 //_________________________________________FRIENDSHIP ENDPOINTS______________________________________//

@@ -1,3 +1,5 @@
 import { v4 } from "uuid";
 
-export const generateId = (): string => v4();
+export class GenerateId{
+   generateId = ():string => v4();
+} 

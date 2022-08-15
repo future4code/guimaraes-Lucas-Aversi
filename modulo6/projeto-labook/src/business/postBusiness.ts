@@ -1,13 +1,16 @@
 import { postsInputDTO, posts, Posts } from "../model/Posts";
 import { PostDatabase } from "../data/dataBases/postsDatabase";
-import { generateId } from "../services/idGenerator";
+import { GenerateId } from "../services/idGenerator";
 import { creationMoment } from "../services/dateGenerator";
 
 export class PostsBusiness{
     public createPostBusiness = async (input:postsInputDTO):Promise<void>=>{
+        const generateId = new GenerateId()
+
         const {photo, description,type,author_id}=input
 
-        const id = generateId()
+        const id = generateId.generateId()
+        console.log("euuu",id)
         const created_at = creationMoment()
 
         const postDatabase = new PostDatabase()
