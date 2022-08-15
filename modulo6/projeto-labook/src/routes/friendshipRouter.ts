@@ -10,4 +10,4 @@ const friendshipController = new FriendshipController()
 
 friendshipRouter.post("/:sender/makeFriend", friendshipController.createFriendship)
 friendshipRouter.get("/all", friendshipController.getAll)
-friendshipRouter.post("/deleteFriend", friendshipController.deleteFriendship)
+friendshipRouter.delete("/deleteFriend", friendshipController.deleteFriendship)

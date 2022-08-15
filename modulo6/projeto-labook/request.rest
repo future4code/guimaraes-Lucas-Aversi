@@ -51,7 +51,7 @@ POST http://localhost:3003/friendship/3/makeFriend
 Content-Type: application/json
 
 {
-    "reciever": "5a7e728a-3afa-47d6-850d-0fba7786e6a7"
+    "reciever": "1b845778-e2c5-4f8c-8baf-c68557991db4"
 }
 ###
 
@@ -62,10 +62,10 @@ GET http://localhost:3003/friendship/all
 
   //3 - DELETE FRIENDSHIP
 
-POST http://localhost:3003/friendship/deleteFriend
+DELETE  http://localhost:3003/friendship/deleteFriend
 Content-Type: application/json
 
 {
-    "idRequest": "4"
+    "idRequest": "5"
 }
 ###
