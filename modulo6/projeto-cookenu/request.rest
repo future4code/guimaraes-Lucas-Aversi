@@ -1,0 +1,18 @@
+//_________________________________________USER ENDPOINTS______________________________________//
+
+  //1 - GET ALL USERS
+
+GET     http://localhost:3003/users/all
+###
+
+  // 2 - CREATE NEW USER
+
+POST http://localhost:3003/users/create
+Content-Type: application/json
+
+{
+    "name": "aa",
+    "email": "Aversiigmail.com",
+    "password": "Aversiii"
+}
+
