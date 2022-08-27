@@ -55,6 +55,18 @@ export class UserController {
     }
 }
 
+public getOwnProfile = async (req: Request, res: Response) => {
+  try {
+    const token = req.headers.authorization as string
+
+    const result = await this.userBusiness.getOwnProfile(token);
+
+    res.status(200).send(result);
+  } catch (error: any) {
+    res.status(400).send(error.message);
+  }
+};
+
   async getAll(req: Request, res: Response){
     try {
       const userBusiness = new UserBusiness()
@@ -66,4 +78,6 @@ export class UserController {
       res.status(400).send(error.message);
     }
   }
+
+
 }

@@ -1,3 +1,4 @@
+import { CustomError } from "../../error/customError";
 import { recipe, Recipes } from "../../model/Recipies";
 import { BaseDatabase } from "./BaseDatabase";
 
@@ -21,4 +22,22 @@ export class RecipesDatabase extends BaseDatabase {
 
     return recipe
   }
+
+  public getRecipeById = async (id: string): Promise<any> => {
+
+    try {
+
+        const result = await RecipesDatabase.connection(RecipesDatabase.TABLE_NAME)
+            .select("id", "title", "description", "created_at")
+            .where("id", "like", id)
+
+        return result[0]
+
+    } catch (error:any) {
+        throw new CustomError(400, error.message)
+    }
+
+}
+
+
 }

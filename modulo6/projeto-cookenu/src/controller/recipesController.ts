@@ -33,7 +33,7 @@ export class RecipeController {
       }
       const recipes = await this.recipeBusiness.createRecipe(recipe);
 
-      res.status(201).send({ message: "Usuário cadastrado com sucesso" });
+      res.status(201).send({ message: "Receita cadastrada com sucesso" });
 
     } catch (error:any) {
       res.status(400).send(error.message);
@@ -50,4 +50,28 @@ export class RecipeController {
       res.status(400).send(error.message);
     }
   }
+
+
+  public getRecipeById = async (req: Request, res: Response) => {
+
+    try {
+
+        const id = req.params.id
+        const token = req.headers.authorization as string
+
+        const input = {
+            id,
+            token
+        }
+
+        const result = await this.recipeBusiness.getRecipeById(input)
+
+        res.status(200).send(result)
+
+    } catch (error:any) {
+        res.status(400).send(error.message)
+    }
+
+
+}
 }

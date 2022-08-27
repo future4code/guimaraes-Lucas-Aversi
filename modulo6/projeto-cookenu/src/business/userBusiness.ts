@@ -57,6 +57,27 @@ export class UserBusiness {
       const token = authenticator.generateToken(payload)
       return token
     }
+
+
+    public getOwnProfile = async (input: any): Promise<any> => {
+		try {
+
+			const tokenData = authenticator.getTokenData(input)
+            
+
+			const user = await this.userDB.getProfileById(tokenData.id)
+            console.log(user.id)
+
+			if (!user) {
+				throw new CustomError(404, "user not found");
+			}
+
+			return user
+
+		} catch (error: any) {
+			throw new CustomError(400, error.message)
+		}
+	};
     
     async getUserBusiness (): Promise<User[]> {
 

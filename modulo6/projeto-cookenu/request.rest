@@ -3,27 +3,36 @@
   //1 - GET ALL USERS
 
 GET     http://localhost:3003/users/all
+
 ###
 
-POST http://localhost:3003/user/signup
+ //2- GET USER BY ID (PROFILE)
+HEAD  Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRlYTJlYjI1LWU2YjMtNDI0MC05NDk0LTJlMTQzMTNiNGRiOSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2MjA5ODksImV4cCI6MTY2MTYyNDU4OX0.7g0RZuPZ0sAqBYL9J0zeQdwy6wdV8PCiZ32jgGjaS0g
+
+GET     http://localhost:3003/users/4ea2eb25-e6b3-4240-9494-2e14313b4db9
+
+###
+
+
+
+POST http://localhost:3003/users/signup
 Content-Type: application/json
+//é possível passar a role como admin caso vc queira ex: "role": "admin"
 
 {
-   "name": "teste", 
-   "nickname": "testinho", 
-   "email": "teste@gmail.com" ,
-   "password": "eu",
-   "role": "admin"
+   "name": "vamos criar um token", 
+   "email": "TOKEEEEEN  @gmail.com" ,
+   "password": "123"
 }
 
 ###
 
-POST http://localhost:3003/user/login
+POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "teste@gmail.com", 
-   "password": "eu"
+   "email": "SACANAGEM@gmail.com", 
+   "password": "123"
 }
 
 ###
@@ -44,8 +53,8 @@ POST http://localhost:3003/recipes/create
 Content-Type: application/json
 
 {
-    "title": "Macarrão com salsicha",
-    "description": "o bom e velho clássico do pobre",
-    "instructions": "macarrão, salsicha, molho e ja era",
-    "author_id": "1"
+    "title": "Macarrão com salsicha2",
+    "description": "o bom e velho clássico do pobre2",
+    "instructions": "macarrão, salsicha, molho e ja era2",
+    "author_id": "f9557333-153c-40c1-aba8-c1b2aa94e005"
 }

@@ -3,6 +3,7 @@ import cors from "cors";
 import { AddressInfo } from "net";
 
 const app = express();
+const jwt = require('jsonwebtoken');
 
 app.use(express.json());
 app.use(cors());
