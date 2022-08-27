@@ -1,12 +1,19 @@
 import { userInputDTO, user, User } from "../model/User";
 import { UserDatabase } from "../data/dataBases/userDatabase";
-import { generateId } from "../services/idGenerator";
+import  IdGenerator  from "../services/idGenerator";
 export class UserBusiness {
+
+    private userDB:UserDatabase
+    constructor(){
+      this.userDB = new UserDatabase()
+    }
+
+
     async create(input:userInputDTO):Promise<void>{
 
         const { name, email, password } = input
 
-        const id = generateId()
+        const id = IdGenerator.generatedID()
 
         const userDatabase = new UserDatabase()
         const user: user = {
@@ -14,8 +21,8 @@ export class UserBusiness {
             name,
             email,
             password
-        }
-        await userDatabase.create(user)
+        }   
+        await this.userDB.create(user)
     }
 
         async getUserBusiness (): Promise<User[]> {

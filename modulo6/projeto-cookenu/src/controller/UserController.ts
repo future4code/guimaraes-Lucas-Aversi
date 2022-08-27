@@ -4,7 +4,12 @@ import { userInputDTO } from "../model/User";
 
 export class UserController {
 
-  async create(req: Request, res: Response):Promise<void> {
+  private userBusiness: UserBusiness
+  constructor(){
+    this.userBusiness = new UserBusiness();
+  }
+
+  public create = async (req: Request, res: Response):Promise<void>=>{
     try {
       const { email, name, password } = req.body;
       if(!name){
@@ -20,13 +25,12 @@ export class UserController {
         throw new Error ("Você não passou a senha")
       }
 
-      const userBusiness = new UserBusiness();
       const user : userInputDTO = {
         email,
         name,
         password
       }
-      await userBusiness.create(user);
+      const users = await this.userBusiness.create(user);
 
       res.status(201).send({ message: "Usuário cadastrado com sucesso" });
 

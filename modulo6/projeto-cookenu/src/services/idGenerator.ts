@@ -1,3 +1,10 @@
-import { v4 } from "uuid";
+import {v4} from "uuid"
 
-export const generateId = (): string => v4();
+class IdGenerator{
+    generatedID = ()=>{
+        return v4()
+
+    }
+}
+
+export default new IdGenerator()
