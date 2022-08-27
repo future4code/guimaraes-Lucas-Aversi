@@ -78,6 +78,33 @@ export class UserBusiness {
 			throw new CustomError(400, error.message)
 		}
 	};
+
+
+    public getAnotherProfile = async (input: any): Promise<any> => {
+
+		try {
+			const {token, id} = input
+
+		const tokenData = authenticator.getTokenData(token)
+
+		const userExists = await this.userDB.getProfileById(tokenData.id)
+
+		if (!userExists) {
+			throw new CustomError(404,"user not found");
+		}
+
+		const user = await this.userDB.getProfileById(id)
+
+		if (!user) {
+			throw new CustomError(404,"user not found");
+		}
+
+		return user
+
+		} catch (error:any) {
+			throw new CustomError(400, error.message)
+		}
+    }
     
     async getUserBusiness (): Promise<User[]> {
 

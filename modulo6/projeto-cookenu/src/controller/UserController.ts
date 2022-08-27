@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/userBusiness"
+import { CustomError } from "../error/customError";
 import { LoginUserInputDTO, userInputDTO } from "../model/User";
+import authenticator from "../services/authenticator";
 
 export class UserController {
 
@@ -80,4 +82,23 @@ public getOwnProfile = async (req: Request, res: Response) => {
   }
 
 
+  public getAnotherProfile = async (req: Request, res: Response) => {
+
+		try {
+			const token = req.headers.authorization
+			const id = req.params.id
+
+			const input = {
+				token,
+				id
+			}
+
+			const result = await this.userBusiness.getAnotherProfile(input)
+
+			res.status(200).send(result)
+
+		} catch (error:any) {
+			res.status(400).send(error.message)
+		}
+	}
 }
