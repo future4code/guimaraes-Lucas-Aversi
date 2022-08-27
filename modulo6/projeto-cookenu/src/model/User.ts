@@ -42,12 +42,19 @@ export class User {
 export interface userInputDTO {
   name: string,
   email: string,
-  password: string
+  password: string,
+  role?:string
 }
 
 export type user  = {
   id: string,
   name: string,
+  email: string,
+  password: string,
+  role?:string
+}
+
+export interface LoginUserInputDTO {
   email: string,
   password: string
 }

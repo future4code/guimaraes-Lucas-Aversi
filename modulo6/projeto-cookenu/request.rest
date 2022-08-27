@@ -5,17 +5,28 @@
 GET     http://localhost:3003/users/all
 ###
 
-  // 2 - CREATE NEW USER
-
-POST http://localhost:3003/users/create
+POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "234236asd",
-    "email": "sasda234242asdp@gmail.com",
-    "password": "123"
+   "name": "teste", 
+   "nickname": "testinho", 
+   "email": "teste@gmail.com" ,
+   "password": "eu",
+   "role": "admin"
 }
 
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "teste@gmail.com", 
+   "password": "eu"
+}
+
+###
 
 ###
 

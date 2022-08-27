@@ -4,6 +4,7 @@
 
 import { user, User } from "../../model/User";
 import { BaseDatabase } from "./BaseDatabase";
+import { CustomError } from "../../error/customError";
 
 export class UserDatabase extends BaseDatabase {
   private static TABLE_NAME = "cookenu_users";
@@ -24,4 +25,15 @@ export class UserDatabase extends BaseDatabase {
 
     return user
   }
+
+  public findUserByEmail = async (email: string) => {
+    try {
+      const result = await UserDatabase.connection(UserDatabase.TABLE_NAME)
+        .select()
+        .where({email});
+      return result[0];
+    } catch (error: any) {
+      throw new CustomError(400, error.sqlMessage);
+    }
+  };
 }

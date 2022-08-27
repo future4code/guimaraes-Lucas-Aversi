@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/userBusiness"
-import { userInputDTO } from "../model/User";
+import { LoginUserInputDTO, userInputDTO } from "../model/User";
 
 export class UserController {
 
@@ -9,7 +9,7 @@ export class UserController {
     this.userBusiness = new UserBusiness();
   }
 
-  public create = async (req: Request, res: Response):Promise<void>=>{
+  public signup = async (req: Request, res: Response):Promise<void>=>{
     try {
       const { email, name, password } = req.body;
       if(!name){
@@ -28,16 +28,32 @@ export class UserController {
       const user : userInputDTO = {
         email,
         name,
-        password
+        password,
       }
-      const users = await this.userBusiness.create(user);
+      const token = await this.userBusiness.createUser(user)
 
-      res.status(201).send({ message: "Usuário cadastrado com sucesso" });
+      res.status(201).send({ message: "Usuário cadastrado com sucesso",token });
 
     } catch (error:any) {
       res.status(400).send(error.message);
     }
   }
+
+  public login = async (req: Request, res: Response) => {
+    try{
+      let input:LoginUserInputDTO = {
+        email: req.body.email,
+        password: req.body.password
+
+      }
+      const token = await this.userBusiness.login(input)
+    res.status(201).send({ message: "login efetuado!", token });
+
+    }
+    catch (error: any) {
+      res.status(400).send(error.message);
+    }
+}
 
   async getAll(req: Request, res: Response){
     try {
