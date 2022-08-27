@@ -3,19 +3,19 @@
 		"id" : "1",
 		"name" : "Lucas Aversi",
 		"email" : "laversi@email.com",
-		"password" : "12345"
+		"password" : "2b$10$mPaqzfsfDx95h0hNmZNW6uVWVVuw2yVZy/jflsdyF9u4GGsn/Z.HS"
 	},
 	{
 		"id" : "2",
 		"name" : "João",
 		"email" : "joão@email.com",
-		"password" : "123"
+		"password" : "$2b$10$b3zNLKUHAZZ9fnglV99TfuXiaKWby4HIjrYSYJH/F0yCHgP1ilEzG"
 	},
 	{
 		"id" : "3",
 		"name" : "carlos",
 		"email" : "carlos@email.com",
-		"password" : "sharkaugusto"
+		"password" : "$2b$10$YGkzmwN.bvwTCyw95WJLx.cBmr2Vgug/rIZGRoL5f7dUwkvc.P.KK"
 	},
 	{
 		"id" : "0a4147ad-30dd-4547-9e35-94e655d02f13",
