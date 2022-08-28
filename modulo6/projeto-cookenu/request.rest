@@ -1,53 +1,54 @@
 //_________________________________________USER ENDPOINTS______________________________________//
 
-  //1 - GET ALL USERS
-
-GET     http://localhost:3003/users/all
-
-###
-
- //2- GET USER BY ID (PROFILE)
-HEAD  Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRlYTJlYjI1LWU2YjMtNDI0MC05NDk0LTJlMTQzMTNiNGRiOSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2MjA5ODksImV4cCI6MTY2MTYyNDU4OX0.7g0RZuPZ0sAqBYL9J0zeQdwy6wdV8PCiZ32jgGjaS0g
-
-GET     http://localhost:3003/users/4ea2eb25-e6b3-4240-9494-2e14313b4db9
-
-###
-
-
+//1 - SIGNUP
+//Its possible define users roles if wanted => "role":"admin". This information is optional and if none value was give by body, user will assume normal as role.
 
 POST http://localhost:3003/users/signup
 Content-Type: application/json
-//é possível passar a role como admin caso vc queira ex: "role": "admin"
 
 {
-   "name": "vamos criar um token", 
-   "email": "TOKEEEEEN  @gmail.com" ,
-   "password": "123"
+   "name": "João da Burra", 
+   "email": "joaodaburra@gmail.com2" ,
+   "password": "123456",
+   "role":"admin"
 }
 
 ###
+
+// 2 - Login
 
 POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "SACANAGEM@gmail.com", 
-   "password": "123"
+   "email": "joaodaburra@gmail.com2", 
+   "password": "123456"
 }
 
 ###
+//3 - GET ALL USERS 
+
+GET     http://localhost:3003/users/all
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkxNTY0MjU1LWJmZGMtNGJkOS04ZGViLTVmZGI3NjM0N2VlMiIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2NDU1NzMsImV4cCI6MTY2MTY1NjM3M30.o5oKeCtA2at8d5gemv-tiBWEJumeO6dfNDcWd6Z7zBM
+
+###
+
+//4- GET USER BY ID (PROFILE)  - needs authorization.
+
+GET     http://localhost:3003/users/3
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY5NTU3MzMzLTE1M2MtNDBjMS1hYmE4LWMxYjJhYTk0ZTAwNSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2NDM3MTAsImV4cCI6MTY2MTY0NzMxMH0.CCkCp8d8zGL_CCWh4VG_Ho2yl0a7r_f-cLhHS1PI7Fg
 
 ###
 
 
 //_________________________________________RECIPES ENDPOINTS______________________________________//
 
-  //1 - GET ALL RECIPES
+//1 - GET ALL RECIPES
 
 GET     http://localhost:3003/recipes/all
 ###
 
-  // 2 - CREATE NEW RECIPE
+// 2 - CREATE NEW RECIPE
 
 POST http://localhost:3003/recipes/create
 Content-Type: application/json

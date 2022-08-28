@@ -3,7 +3,8 @@ export class User {
     private id: string,
     private name: string,
     private email: string,
-    private password: string
+    private password: string,
+    private role?:string
   ) { }
   
   getId() {
@@ -22,6 +23,10 @@ export class User {
     return this.password
   }
 
+  getRole() {
+    return this.role
+  }
+
   setId(newId: string) {
     this.id = newId
   }
@@ -36,6 +41,10 @@ export class User {
 
   setPassword(newPassword: string) {
     this.password = newPassword
+  }
+
+  setRole(newRole:string){
+    this.role = newRole
   }
 }
 

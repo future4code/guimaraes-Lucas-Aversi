@@ -5,14 +5,14 @@ import { BaseDatabase } from "./BaseDatabase";
 export class RecipesDatabase extends BaseDatabase {
   private static TABLE_NAME = "cookenu_recipes";
 
-  async create(recipie: recipe): Promise<void> {
+  async create(recipe: recipe): Promise<void> {
     await RecipesDatabase.connection
       .insert({
-        id: recipie.id,
-        title: recipie.title,
-        description: recipie.description,
-        instructions: recipie.instructions,
-        author_id:recipie.author_id
+        id: recipe.id,
+        title: recipe.title,
+        description: recipe.description,
+        instructions: recipe.instructions,
+        author_id:recipe.author_id
       })
       .into(RecipesDatabase.TABLE_NAME);
   }

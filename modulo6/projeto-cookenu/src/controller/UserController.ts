@@ -13,7 +13,10 @@ export class UserController {
 
   public signup = async (req: Request, res: Response):Promise<void>=>{
     try {
-      const { email, name, password } = req.body;
+      let { email, name, password, role } = req.body;
+      if (role !== "normal" && role !== "admin"){
+        role = "normal"
+      }
       if(!name){
         throw new Error ("Você não passou o name")
       }
@@ -26,11 +29,13 @@ export class UserController {
       if(!password){
         throw new Error ("Você não passou a senha")
       }
+      
 
       const user : userInputDTO = {
         email,
         name,
         password,
+        role
       }
       const token = await this.userBusiness.createUser(user)
 
@@ -69,10 +74,11 @@ public getOwnProfile = async (req: Request, res: Response) => {
   }
 };
 
-  async getAll(req: Request, res: Response){
+  public getAllUsers= async (req: Request, res: Response)=>{
     try {
-      const userBusiness = new UserBusiness()
-      const users = await userBusiness.getUserBusiness()
+      const token = req.headers.authorization as string
+
+      const users = await this.userBusiness.getAllUsers(token)
 
       res.status(201).send(users)
       

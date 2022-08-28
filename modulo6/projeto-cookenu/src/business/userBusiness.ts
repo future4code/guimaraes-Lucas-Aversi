@@ -11,6 +11,7 @@ export class UserBusiness {
     constructor(){
       this.userDB = new UserDatabase()
     }
+    
     public createUser = async (input: userInputDTO) => {
       try {
         let {name, email, password, role} = input
@@ -19,10 +20,14 @@ export class UserBusiness {
   
         console.log("eu1", password)
   
-        const user :user={id,email,password:hash,name,role}
+        let user :user={id,email,password:hash,name,role}
   
         if(!name || !email || !password){
           throw new CustomError(422,"Ausencia de parametros")
+        }
+        if(password.length <6){
+            throw new CustomError(400,"a senha precisa conter no minimo 6 caracteres")
+
         }
         if (role !== "normal" && role !== "admin"){
           role = "normal"
@@ -106,11 +111,22 @@ export class UserBusiness {
 		}
     }
     
-    async getUserBusiness (): Promise<User[]> {
+    public getAllUsers = async  (input:any): Promise<User[]>=> {
+        try{
+        const tokenData = authenticator.getTokenData(input)
+        console.log(tokenData.role)
+         if (tokenData.role!=="admin"){
+            throw new CustomError(403,"user must be an admin to access this feature")
+        } 
+        
+        const users = await this.userDB.getUserAll(); 
 
-        const userDatabase = new UserDatabase();
-        const users = await userDatabase.getUserAll();  
-        return users;        
+        return users;     
+        }
+        catch (error:any) {
+			throw new CustomError(400, error.message)
+		}
+           
     }
   }
   

@@ -10,18 +10,19 @@ import authenticator from "../../services/authenticator";
 export class UserDatabase extends BaseDatabase {
   private static TABLE_NAME = "cookenu_users";
 
-  async create(user: user): Promise<void> {
+  public create = async (user: user): Promise<void>=> {
     await UserDatabase.connection
       .insert({
         id: user.id,
         name: user.name,
         email: user.email,
         password: user.password,
+        role:user.role
       })
       .into(UserDatabase.TABLE_NAME);
   }
 
-  async getUserAll ():Promise <User[]> {
+  public getUserAll = async  ():Promise <User[]>=> {
     const user = await UserDatabase.connection(UserDatabase.TABLE_NAME).select()
 
     return user

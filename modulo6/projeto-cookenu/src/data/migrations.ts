@@ -12,7 +12,7 @@ const createTables = () => connection
       name VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
       password VARCHAR(255) NOT NULL,
-      role ENUM("normal","admin") NOT NULL DEFAULT "normal"
+      role VARCHAR(255) NOT NULL
    );
    
    CREATE TABLE IF NOT EXISTS cookenu_recipes(
