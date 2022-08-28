@@ -34,7 +34,8 @@ export class RecipesDatabase extends BaseDatabase {
         return result[0]
 
     } catch (error:any) {
-        throw new CustomError(400, error.message)
+        throw new CustomError(error.message)
+        
     }
 
 }

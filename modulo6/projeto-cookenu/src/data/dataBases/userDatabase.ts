@@ -34,7 +34,18 @@ export class UserDatabase extends BaseDatabase {
         .where({email});
       return result[0];
     } catch (error: any) {
-      throw new CustomError(400, error.sqlMessage);
+      throw new CustomError(error.sqlMessage);
+    }
+  };
+
+  public findUserById = async (id: string) => {
+    try {
+      const result = await UserDatabase.connection(UserDatabase.TABLE_NAME)
+        .select()
+        .where({id});
+      return result[0];
+    } catch (error: any) {
+      throw new CustomError(error.sqlMessage);
     }
   };
 
@@ -47,7 +58,7 @@ export class UserDatabase extends BaseDatabase {
 
       return result[0];
     } catch (error: any) {
-      throw new CustomError(400, error.sqlMessage);
+      throw new CustomError(error.sqlMessage);
     }
   };
 

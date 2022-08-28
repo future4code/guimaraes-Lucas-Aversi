@@ -7,9 +7,9 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "Lucas Aversi", 
-   "email": "laversii@gmail.com",
-   "password": "123abc",
+   "name": "zzz", 
+   "email": "zzz@gmail.com",
+   "password": "123456",
    "role": "admin"
 }
 
@@ -21,22 +21,29 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "laversi@gmail.com", 
-   "password": "123abc"
+   "email": "zzz@gmail.com", 
+   "password": "123456"
 }
 
 ###
+
 //3 - GET ALL USERS - needs role authorization;
 
 GET     http://localhost:3003/users/all
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQxYjRiZTU5LTRiNTEtNGYzOS1hZmI1LTMyMzYxNGM0NjQ2YiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY3OTk1OSwiZXhwIjoxNjYxNjkwNzU5fQ.pA9GkxK_qMPhZbaWC-zy5puS8qQN2aCobnvleWJ2U8A
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY5MTEwMiwiZXhwIjoxNjYxNzAxOTAyfQ.hzsvYHWGANE6atVWUoZtD4iv62bkuet6q0T5lPlBkv8
 ###
 
 //4- GET USER BY ID (PROFILE)  - needs authorization.
 
-GET     http://localhost:3003/users/3
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY0NzMwOCwiZXhwIjoxNjYxNjU4MTA4fQ.Cm8oT5NCFztqbSaSrISipiXyfWTrY3SFehfKCBq0iB8
+GET     http://localhost:3003/users/2
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY5MTEwMiwiZXhwIjoxNjYxNzAxOTAyfQ.hzsvYHWGANE6atVWUoZtD4iv62bkuet6q0T5lPlBkv8
 
+###
+
+//5 - GET OWN PROFILE - needs role authorization;
+
+GET     http://localhost:3003/users/profile
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0OGU4ZTYyLTA0ZTUtNGFhNi05MDgwLWE2NWUzZWU5Zjg0MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY5NTM2NiwiZXhwIjoxNjYxNzA2MTY2fQ.ksMZs5J_FNexJOc6y93omIDAErCf87A50pqY55M_uUs
 ###
 
 

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/userBusiness"
-import { CustomError } from "../error/customError";
+import { CustomError, MissingParams_InvalidName } from "../error/customError";
 import { LoginUserInputDTO, userInputDTO } from "../model/User";
 import authenticator from "../services/authenticator";
 
@@ -17,19 +17,7 @@ export class UserController {
       if (role !== "normal" && role !== "admin"){
         role = "normal"
       }
-      if(!name){
-        throw new Error ("Você não passou o name")
-      }
-      if(!email){
-        throw new Error ("Você não passou o email")
-      }
-      if(!email.includes("@")){
-        throw new Error ("Passe um email válido")
-      }
-      if(!password){
-        throw new Error ("Você não passou a senha")
-      }
-      
+     
 
       const user : userInputDTO = {
         email,
@@ -51,10 +39,10 @@ export class UserController {
       let input:LoginUserInputDTO = {
         email: req.body.email,
         password: req.body.password
-
       }
-      const token = await this.userBusiness.login(input)
-    res.status(201).send({ message: "login efetuado!", token });
+
+    const token = await this.userBusiness.login(input)
+      res.status(201).send({ message: "login efetuado!", token });
 
     }
     catch (error: any) {

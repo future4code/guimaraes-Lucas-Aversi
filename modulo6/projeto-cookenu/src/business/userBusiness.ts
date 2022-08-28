@@ -2,7 +2,7 @@ import { userInputDTO, user, User, LoginUserInputDTO } from "../model/User";
 import { UserDatabase } from "../data/dataBases/userDatabase";
 import  IdGenerator  from "../services/idGenerator";
 import hashManager from "../services/hashManager";
-import { CustomError } from "../error/customError";
+import { BadRequest_EmptyTable, CustomError, InvalidRequest_UserNotFound, InvalidRequest_WrongPassword, MissingParams_InvalidEmail, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
 import authenticator from "../services/authenticator";
 import { AuthenticationData } from "../model/AuthenticationData";
 export class UserBusiness {
@@ -17,41 +17,52 @@ export class UserBusiness {
         let {name, email, password, role} = input
         const id = IdGenerator.generatedID()
         const hash = await hashManager.generateHash(password)
-  
-        console.log("eu1", password)
-  
-        let user :user={id,email,password:hash,name,role}
-  
-        if(!name || !email || !password){
-          throw new CustomError(422,"Ausencia de parametros")
-        }
-        if(password.length <6){
-            throw new CustomError(400,"a senha precisa conter no minimo 6 caracteres")
 
-        }
+        let user :user={id,email,password:hash,name,role}
+        
         if (role !== "normal" && role !== "admin"){
           role = "normal"
+        }
+        
+        if(!name){
+          throw new MissingParams_InvalidName()
+        }
+
+        if(!password){
+          throw new MissingParams_InvalidPassword()
+        }
+
+        if(!email){
+          throw new MissingParams_InvalidEmail()
+        }
+
+        if(!email.includes("@")){
+          throw new MissingParams_InvalidEmail()
         }
   
         await this.userDB.create(user)
         const token = authenticator.generateToken({id,role})
         return token      
-      } catch (error: any) {
-        throw new CustomError(400, error.message);
+      }catch (error: any) {
+        throw new CustomError(error.message);
       }
     };
   
     public login = async (input:LoginUserInputDTO) =>{
       let {email, password} = input
-      console.log("euu",password)
-      if(!email ||!password){
-        throw new CustomError(422,"Ausencia de parametros")
+
+      if(!email){
+        throw new MissingParams_InvalidEmail()
+      }
+      if(!password){
+        throw new MissingParams_InvalidPassword()
       }
   
       const user = await this.userDB.findUserByEmail(email)
       const hashCompare = await hashManager.compareHash(password,user.password)
+
       if(!hashCompare){
-        throw new CustomError(403,"Invalid password")
+        throw new InvalidRequest_WrongPassword()
       }
   
       const payload :AuthenticationData={
@@ -66,21 +77,18 @@ export class UserBusiness {
 
     public getOwnProfile = async (input: any): Promise<any> => {
 		try {
-
-			const tokenData = authenticator.getTokenData(input)
-            
+			const tokenData = authenticator.getTokenData(input)        
 
 			const user = await this.userDB.getProfileById(tokenData.id)
-            console.log(user.id)
 
 			if (!user) {
-				throw new CustomError(404, "user not found");
+				throw new InvalidRequest_UserNotFound();
 			}
 
 			return user
 
 		} catch (error: any) {
-			throw new CustomError(400, error.message)
+			throw new CustomError(error.message)
 		}
 	};
 
@@ -90,24 +98,30 @@ export class UserBusiness {
 		try {
 			const {token, id} = input
 
-		const tokenData = authenticator.getTokenData(token)
+      let profileExists = await this.userDB.findUserById(input.id)
+      if (!profileExists) {
+				throw new InvalidRequest_UserNotFound();
+      }
 
-		const userExists = await this.userDB.getProfileById(tokenData.id)
 
-		if (!userExists) {
-			throw new CustomError(404,"user not found");
-		}
+		    const tokenData = authenticator.getTokenData(token)
+
+		    const userExists = await this.userDB.getProfileById(tokenData.id)
+
+		  if (!userExists) {
+				throw new InvalidRequest_UserNotFound();
+		} 
 
 		const user = await this.userDB.getProfileById(id)
 
 		if (!user) {
-			throw new CustomError(404,"user not found");
+      throw new InvalidRequest_UserNotFound();
 		}
 
 		return user
 
 		} catch (error:any) {
-			throw new CustomError(400, error.message)
+			throw new CustomError(error.message)
 		}
     }
     
@@ -115,16 +129,16 @@ export class UserBusiness {
         try{
         const tokenData = authenticator.getTokenData(input)
         console.log(tokenData.role)
-         if (tokenData.role!=="admin"){
-            throw new CustomError(403,"user must be an admin to access this feature")
+
+        const users = await this.userDB.getUserAll();
+        if(users.length<0){
+          throw new BadRequest_EmptyTable();
         } 
-        
-        const users = await this.userDB.getUserAll(); 
 
         return users;     
         }
         catch (error:any) {
-			throw new CustomError(400, error.message)
+			throw new CustomError(error.message)
 		}
            
     }

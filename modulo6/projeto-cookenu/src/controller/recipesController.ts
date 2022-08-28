@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { RecipesBusiness } from "../business/recipiesBusiness"
+import { RecipesBusiness } from "../business/recipesBusiness"
 import { recipeInputDTO } from "../model/Recipes";
 
 export class RecipeController {
