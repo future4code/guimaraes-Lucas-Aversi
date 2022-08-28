@@ -1,7 +1,7 @@
 import { recipe, recipeInputDTO, Recipes } from "../model/Recipes";
 import { RecipesDatabase } from "../data/dataBases/recipesDatabase";
 import IdGenerator from "../services/idGenerator";
-import { CustomError } from "../error/customError";
+import { CustomError, InvalidRequest_RecipeNotFound, InvalidRequest_UserNotFound, MissingParams_InvalidAuthor, MissingParams_InvalidDescription, MissingParams_InvalidInstructions, MissingParams_InvalidTitle } from "../error/customError";
 import authenticator from "../services/authenticator";
 import { UserDatabase } from "../data/dataBases/userDatabase";
 export class RecipesBusiness{
@@ -15,16 +15,24 @@ export class RecipesBusiness{
   public createRecipe = async (input:recipeInputDTO, token:string):Promise<void>=>{
     const {title, description, instructions,author_id}=input
 
+    if(!title){
+      throw new MissingParams_InvalidTitle()
+    }
+
+    if(!description){
+      throw new MissingParams_InvalidDescription()
+    }
+
+    if(!instructions){
+      throw new MissingParams_InvalidInstructions()
+    }
+
+    if(!author_id){
+      throw new MissingParams_InvalidAuthor()
+    }
+
     const id = IdGenerator.generatedID()
     const tokenData = authenticator.getTokenData(token)
-    if (!tokenData) {
-      throw new CustomError(403, "Não autorizado")
-  }
-
-
-    if (!token) {
-      throw new CustomError(404, "Token Inválido")
-  }
 
     const recipe: recipe ={
       id,
@@ -37,8 +45,12 @@ export class RecipesBusiness{
     await this.recipeDB.create(recipe)
   }
 
-  public getAllRecipesBusiness=async():Promise<Recipes[]>=>{
+  public getAllRecipesBusiness=async(input:any):Promise<Recipes[]>=>{
     const recipe = await this.recipeDB.getAllRecpies()
+    const token = input
+    const tokenData = authenticator.getTokenData(token)
+
+
     return recipe
   }
 
@@ -48,31 +60,23 @@ export class RecipesBusiness{
 
         const { id, token } = input
 
-        if (!token) {
-            throw new CustomError(404, "Token Inválido")
-        }
-
         const tokenData = authenticator.getTokenData(token)
         const userExist = await this.userDB.getProfileById(tokenData.id)
 
         if (!userExist) {
-            throw new CustomError(404,"not found current ID")
+            throw new InvalidRequest_UserNotFound();
         }
 
         const recipe = await this.recipeDB.getRecipeById(id)
 
         if (!recipe) {
-            throw new CustomError(400, "Não foi encontrada uma receita com o id informado.")
-        }
-
-        if (!tokenData) {
-            throw new CustomError(403, "Não autorizado")
+            throw new InvalidRequest_RecipeNotFound();
         }
 
         return recipe
 
     } catch (error: any) {
-        throw new CustomError(400, error.message)
+        throw new CustomError(error.message)
     }
 }
 }

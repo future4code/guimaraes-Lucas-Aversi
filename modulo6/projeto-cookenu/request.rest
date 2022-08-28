@@ -7,10 +7,10 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "zzz", 
-   "email": "zzz@gmail.com",
+   "name": "coxinha e doquinha", 
+   "email": "doquinha@gmail.com",
    "password": "123456",
-   "role": "admin"
+   "role": "normal"
 }
 
 ###
@@ -21,37 +21,38 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "zzz@gmail.com", 
+   "email": "doquinha@gmail.com", 
    "password": "123456"
 }
 
 ###
 
-//3 - GET ALL USERS - needs role authorization;
+//3 - GET ALL USERS - needs role authorization if user is not an Admin, he cant access this feature.
 
 GET     http://localhost:3003/users/all
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY5MTEwMiwiZXhwIjoxNjYxNzAxOTAyfQ.hzsvYHWGANE6atVWUoZtD4iv62bkuet6q0T5lPlBkv8
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTg4NjAsImV4cCI6MTY2MTcwOTY2MH0.MxVKXwFgjoaim3zVjJFBu20pHY_-u5h_N_3KzoIZ77g
 ###
 
-//4- GET USER BY ID (PROFILE)  - needs authorization.
+//3.1 - GET USER BY ID (PROFILE)  - needs authorization.
 
 GET     http://localhost:3003/users/2
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY5MTEwMiwiZXhwIjoxNjYxNzAxOTAyfQ.hzsvYHWGANE6atVWUoZtD4iv62bkuet6q0T5lPlBkv8
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
 
 ###
 
-//5 - GET OWN PROFILE - needs role authorization;
+//3.2 - GET OWN PROFILE - needs role authorization;
 
 GET     http://localhost:3003/users/profile
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0OGU4ZTYyLTA0ZTUtNGFhNi05MDgwLWE2NWUzZWU5Zjg0MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY5NTM2NiwiZXhwIjoxNjYxNzA2MTY2fQ.ksMZs5J_FNexJOc6y93omIDAErCf87A50pqY55M_uUs
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
 ###
 
 
 //_________________________________________RECIPES ENDPOINTS______________________________________//
 
-//1 - GET ALL RECIPES
+//1 - GET ALL RECIPES - needs authorization.
 
 GET     http://localhost:3003/recipes/all
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
 
 
 ###
@@ -59,8 +60,8 @@ GET     http://localhost:3003/recipes/all
 //1.2 - GET RECIPE BY ID - needs authorization.
 
 
-GET     http://localhost:3003/recipes/1
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY2MDU0OCwiZXhwIjoxNjYxNjcxMzQ4fQ.EKHT_2AKnN8nIiz2P-lsBpACiX3sY4QJMyeIRzi1cug
+GET     http://localhost:3003/recipes/3
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
 
 ###
 
@@ -68,7 +69,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2Yt
 
 POST http://localhost:3003/recipes/create
 Content-Type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQxYjRiZTU5LTRiNTEtNGYzOS1hZmI1LTMyMzYxNGM0NjQ2YiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY3OTk1OSwiZXhwIjoxNjYxNjkwNzU5fQ.pA9GkxK_qMPhZbaWC-zy5puS8qQN2aCobnvleWJ2U8A
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
 
 {
     "title": "Frango Frito",

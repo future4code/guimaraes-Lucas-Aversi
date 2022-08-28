@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { RecipesBusiness } from "../business/recipesBusiness"
+import { CustomError } from "../error/customError";
 import { recipeInputDTO } from "../model/Recipes";
 
 export class RecipeController {
@@ -13,20 +14,6 @@ export class RecipeController {
     try {
       const { title, description, instructions, author_id } = req.body;
       const token = req.headers.authorization as string
-
-      
-      if(!title){
-        throw new Error ("Você não passou o title")
-      }
-      if(!description){
-        throw new Error ("Você não passou o description")
-      }
-      if(!instructions){
-        throw new Error ("Passe uma instrução")
-      }
-      if(!author_id){
-        throw new Error ("Você não passou a id de quem ta postando a receita")
-      }
 
       const recipe : recipeInputDTO = {
         title,
@@ -43,9 +30,13 @@ export class RecipeController {
     }
   }
 
-  public getAll=async(req: Request, res: Response)=>{
+  public getAll= async (req: Request, res: Response)=>{
     try {
-      const recipes = await this.recipeBusiness.getAllRecipesBusiness()
+      const token = req.headers.authorization as string
+
+      const recipes = await this.recipeBusiness.getAllRecipesBusiness(token)
+
+
 
       res.status(201).send(recipes)
       
