@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
    "name": "coxinha e doquinha", 
-   "email": "doquinha2@gmail.com",
+   "email": "doquinha25@gmail.com",
    "password": "123456",
    "role": "admin"
 }
@@ -30,21 +30,38 @@ Content-Type: application/json
 //3 - GET ALL USERS - needs role authorization if user is not an Admin, he cant access this feature.
 
 GET     http://localhost:3003/users/all
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTg4NjAsImV4cCI6MTY2MTcwOTY2MH0.MxVKXwFgjoaim3zVjJFBu20pHY_-u5h_N_3KzoIZ77g
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4NzQ4MDdhLWRiN2YtNDU5ZS1hMTU3LTZmYWNkNTc1YmRkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTcyNzI5MCwiZXhwIjoxNjYxNzM4MDkwfQ.LGClvSzfxQw_N9doKwUOkeVv2ShROadkiFblJzyUxlQ
 ###
 
 //3.1 - GET USER BY ID (PROFILE)  - needs authorization.
 
 GET     http://localhost:3003/users/2
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4NzQ4MDdhLWRiN2YtNDU5ZS1hMTU3LTZmYWNkNTc1YmRkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTcyNzI5MCwiZXhwIjoxNjYxNzM4MDkwfQ.LGClvSzfxQw_N9doKwUOkeVv2ShROadkiFblJzyUxlQ
+
 
 ###
 
 //3.2 - GET OWN PROFILE - needs role authorization;
 
 GET     http://localhost:3003/users/profile
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4NzQ4MDdhLWRiN2YtNDU5ZS1hMTU3LTZmYWNkNTc1YmRkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTcyNzI5MCwiZXhwIjoxNjYxNzM4MDkwfQ.LGClvSzfxQw_N9doKwUOkeVv2ShROadkiFblJzyUxlQ
 ###
+
+
+//4 - FOLLOW SOMEONE - needs authorization.
+
+POST     http://localhost:3003/users/follow
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4NzQ4MDdhLWRiN2YtNDU5ZS1hMTU3LTZmYWNkNTc1YmRkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTcyNzI5MCwiZXhwIjoxNjYxNzM4MDkwfQ.LGClvSzfxQw_N9doKwUOkeVv2ShROadkiFblJzyUxlQ
+
+{
+   "user_id": "1", 
+   "following_id": "3"
+}
+###
+
+
+
 
 
 //_________________________________________RECIPES ENDPOINTS______________________________________//
@@ -52,8 +69,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWIt
 //1 - GET ALL RECIPES - needs authorization.
 
 GET     http://localhost:3003/recipes/all
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
-
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4NzQ4MDdhLWRiN2YtNDU5ZS1hMTU3LTZmYWNkNTc1YmRkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTcyMjY2OCwiZXhwIjoxNjYxNzMzNDY4fQ.ClLeGvDyphPbaYiYGEctuo6pNOGLTcw_ucZPL2fWGDM
 
 ###
 
@@ -61,7 +77,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWIt
 
 
 GET     http://localhost:3003/recipes/3
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4NzQ4MDdhLWRiN2YtNDU5ZS1hMTU3LTZmYWNkNTc1YmRkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTcyMjY2OCwiZXhwIjoxNjYxNzMzNDY4fQ.ClLeGvDyphPbaYiYGEctuo6pNOGLTcw_ucZPL2fWGDM
 
 ###
 
@@ -69,7 +85,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWIt
 
 POST http://localhost:3003/recipes/create
 Content-Type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4NzQ4MDdhLWRiN2YtNDU5ZS1hMTU3LTZmYWNkNTc1YmRkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTcyNzI5MCwiZXhwIjoxNjYxNzM4MDkwfQ.LGClvSzfxQw_N9doKwUOkeVv2ShROadkiFblJzyUxlQ
 
 {
     "title": "Frango Frito",

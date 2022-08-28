@@ -19,7 +19,6 @@ export class RecipesDatabase extends BaseDatabase {
 
   async getAllRecpies ():Promise <Recipes[]> {
     const recipe = await RecipesDatabase.connection(RecipesDatabase.TABLE_NAME).select()
-
     return recipe
   }
 

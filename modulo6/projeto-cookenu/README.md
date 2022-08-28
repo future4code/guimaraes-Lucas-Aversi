@@ -19,6 +19,7 @@ A implementar
 *Seguir um usuário*
 *Pegar feed das receitas dos seguidores dos seguidores*
 
+
 Documentação da API
 
 *//_________________________________________USER ENDPOINTS______________________________________//*
@@ -69,6 +70,8 @@ authorization: *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWI
 GET     *http://localhost:3003/users/profile*
 authorization: *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNDdmODUyLTZmNWItNGE2Mi1iYWYzLWFkYmJhMjE2M2I5OSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2OTY4NjMsImV4cCI6MTY2MTcwNzY2M30.6vBgewaE7a2PTC0c6dPwTzqrWLTnfvTH3CcUB3bZFuU*
 ###
+
+
 
 
 *//_________________________________________RECIPES ENDPOINTS______________________________________//*

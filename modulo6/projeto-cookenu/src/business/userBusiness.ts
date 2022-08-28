@@ -2,7 +2,7 @@ import { userInputDTO, user, User, LoginUserInputDTO } from "../model/User";
 import { UserDatabase } from "../data/dataBases/userDatabase";
 import  IdGenerator  from "../services/idGenerator";
 import hashManager from "../services/hashManager";
-import { BadRequest_EmptyTable, CustomError, Forbbiden_Unauthorized, InvalidRequest_UserNotFound, InvalidRequest_WrongPassword, MissingParams_InvalidEmail, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
+import { BadRequest_EmptyTable, Forbbiden_Unauthorized, CustomError, InvalidRequest_UserNotFound, InvalidRequest_WrongPassword, MissingParams_InvalidEmail, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
 import authenticator from "../services/authenticator";
 import { AuthenticationData } from "../model/AuthenticationData";
 export class UserBusiness {

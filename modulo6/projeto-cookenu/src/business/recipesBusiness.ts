@@ -45,12 +45,9 @@ export class RecipesBusiness{
     await this.recipeDB.create(recipe)
   }
 
-  public getAllRecipesBusiness=async(input:any):Promise<Recipes[]>=>{
+  public getAllRecipesBusiness=async(token:string):Promise<Recipes[]>=>{
     const recipe = await this.recipeDB.getAllRecpies()
-    const token = input
     const tokenData = authenticator.getTokenData(token)
-
-
     return recipe
   }
 
