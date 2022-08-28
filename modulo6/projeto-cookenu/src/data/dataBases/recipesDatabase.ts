@@ -1,5 +1,5 @@
 import { CustomError } from "../../error/customError";
-import { recipe, Recipes } from "../../model/Recipies";
+import { recipe, Recipes } from "../../model/Recipes";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class RecipesDatabase extends BaseDatabase {
