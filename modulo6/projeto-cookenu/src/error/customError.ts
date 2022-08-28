@@ -77,3 +77,9 @@ export class BadRequest_EmptyTable extends CustomError{
         super("400 - Bad Request - This List Has No Entries So Far")
     }
 }
+
+export class Forbbiden_Unauthorized extends CustomError{ 
+    constructor(){
+        super("403 - Forbbiden - Only admin users can explore this feature")
+    }
+}

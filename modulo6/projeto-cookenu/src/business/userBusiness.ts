@@ -2,7 +2,7 @@ import { userInputDTO, user, User, LoginUserInputDTO } from "../model/User";
 import { UserDatabase } from "../data/dataBases/userDatabase";
 import  IdGenerator  from "../services/idGenerator";
 import hashManager from "../services/hashManager";
-import { BadRequest_EmptyTable, CustomError, InvalidRequest_UserNotFound, InvalidRequest_WrongPassword, MissingParams_InvalidEmail, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
+import { BadRequest_EmptyTable, CustomError, Forbbiden_Unauthorized, InvalidRequest_UserNotFound, InvalidRequest_WrongPassword, MissingParams_InvalidEmail, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
 import authenticator from "../services/authenticator";
 import { AuthenticationData } from "../model/AuthenticationData";
 export class UserBusiness {
@@ -129,6 +129,10 @@ export class UserBusiness {
         try{
         const tokenData = authenticator.getTokenData(input)
         console.log(tokenData.role)
+
+        if (tokenData.role !== "admin"){
+          throw new Forbbiden_Unauthorized()
+        }
 
         const users = await this.userDB.getUserAll();
         if(users.length<0){
