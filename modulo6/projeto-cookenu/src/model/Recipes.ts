@@ -55,7 +55,8 @@ export class Recipes {
     title: string,
     description: string,
     instructions: string,
-    author_id:string 
+    author_id:string,
+    token:string
   }
   
   export type recipe  = {

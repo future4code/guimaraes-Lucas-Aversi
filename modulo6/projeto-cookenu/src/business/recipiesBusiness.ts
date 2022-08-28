@@ -1,4 +1,4 @@
-import { recipe, recipeInputDTO, Recipes } from "../model/Recipies";
+import { recipe, recipeInputDTO, Recipes } from "../model/Recipes";
 import { RecipesDatabase } from "../data/dataBases/recipesDatabase";
 import IdGenerator from "../services/idGenerator";
 import { CustomError } from "../error/customError";
@@ -12,9 +12,19 @@ export class RecipesBusiness{
     this.userDB = new UserDatabase()
   }
 
-  public createRecipe = async (input:recipeInputDTO):Promise<void>=>{
+  public createRecipe = async (input:recipeInputDTO, token:string):Promise<void>=>{
     const {title, description, instructions,author_id}=input
+
     const id = IdGenerator.generatedID()
+    const tokenData = authenticator.getTokenData(token)
+    if (!tokenData) {
+      throw new CustomError(403, "Não autorizado")
+  }
+
+
+    if (!token) {
+      throw new CustomError(404, "Token Inválido")
+  }
 
     const recipe: recipe ={
       id,

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { RecipesBusiness } from "../business/recipiesBusiness"
-import { recipeInputDTO } from "../model/Recipies";
+import { recipeInputDTO } from "../model/Recipes";
 
 export class RecipeController {
 
@@ -12,6 +12,9 @@ export class RecipeController {
   public create = async (req: Request, res: Response):Promise<void>=>{
     try {
       const { title, description, instructions, author_id } = req.body;
+      const token = req.headers.authorization as string
+
+      
       if(!title){
         throw new Error ("Você não passou o title")
       }
@@ -31,7 +34,7 @@ export class RecipeController {
         instructions,
         author_id
       }
-      const recipes = await this.recipeBusiness.createRecipe(recipe);
+      const recipes = await this.recipeBusiness.createRecipe(recipe,token);
 
       res.status(201).send({ message: "Receita cadastrada com sucesso" });
 

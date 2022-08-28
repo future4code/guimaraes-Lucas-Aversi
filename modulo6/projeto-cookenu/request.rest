@@ -1,16 +1,16 @@
 //_________________________________________USER ENDPOINTS______________________________________//
 
-//1 - SIGNUP
+//1 - Signup
 //Its possible define users roles if wanted => "role":"admin". This information is optional and if none value was give by body, user will assume normal as role.
 
 POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "João da Burra", 
-   "email": "joaodaburra@gmail.com2" ,
-   "password": "123456",
-   "role":"admin"
+   "name": "Lucas Aversi", 
+   "email": "laversii@gmail.com",
+   "password": "123abc",
+   "role": "admin"
 }
 
 ###
@@ -21,22 +21,21 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "joaodaburra@gmail.com2", 
-   "password": "123456"
+   "email": "laversi@gmail.com", 
+   "password": "123abc"
 }
 
 ###
-//3 - GET ALL USERS 
+//3 - GET ALL USERS - needs role authorization;
 
 GET     http://localhost:3003/users/all
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkxNTY0MjU1LWJmZGMtNGJkOS04ZGViLTVmZGI3NjM0N2VlMiIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2NDU1NzMsImV4cCI6MTY2MTY1NjM3M30.o5oKeCtA2at8d5gemv-tiBWEJumeO6dfNDcWd6Z7zBM
-
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQxYjRiZTU5LTRiNTEtNGYzOS1hZmI1LTMyMzYxNGM0NjQ2YiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY3OTk1OSwiZXhwIjoxNjYxNjkwNzU5fQ.pA9GkxK_qMPhZbaWC-zy5puS8qQN2aCobnvleWJ2U8A
 ###
 
 //4- GET USER BY ID (PROFILE)  - needs authorization.
 
 GET     http://localhost:3003/users/3
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY5NTU3MzMzLTE1M2MtNDBjMS1hYmE4LWMxYjJhYTk0ZTAwNSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE2NDM3MTAsImV4cCI6MTY2MTY0NzMxMH0.CCkCp8d8zGL_CCWh4VG_Ho2yl0a7r_f-cLhHS1PI7Fg
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY0NzMwOCwiZXhwIjoxNjYxNjU4MTA4fQ.Cm8oT5NCFztqbSaSrISipiXyfWTrY3SFehfKCBq0iB8
 
 ###
 
@@ -46,16 +45,27 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY5NTU3MzMzLTE1M2Mt
 //1 - GET ALL RECIPES
 
 GET     http://localhost:3003/recipes/all
+
+
 ###
 
-// 2 - CREATE NEW RECIPE
+//1.2 - GET RECIPE BY ID - needs authorization.
+
+
+GET     http://localhost:3003/recipes/1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2MGZlMDNiLTk1M2YtNDg2Ny04ZmExLTgzZTVhNTg4MjM2YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY2MDU0OCwiZXhwIjoxNjYxNjcxMzQ4fQ.EKHT_2AKnN8nIiz2P-lsBpACiX3sY4QJMyeIRzi1cug
+
+###
+
+// 2 - CREATE NEW RECIPE - needs authorization
 
 POST http://localhost:3003/recipes/create
 Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQxYjRiZTU5LTRiNTEtNGYzOS1hZmI1LTMyMzYxNGM0NjQ2YiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTY3OTk1OSwiZXhwIjoxNjYxNjkwNzU5fQ.pA9GkxK_qMPhZbaWC-zy5puS8qQN2aCobnvleWJ2U8A
 
 {
-    "title": "Macarrão com salsicha2",
-    "description": "o bom e velho clássico do pobre2",
-    "instructions": "macarrão, salsicha, molho e ja era2",
-    "author_id": "f9557333-153c-40c1-aba8-c1b2aa94e005"
+    "title": "Frango Frito",
+    "description": "Frango frito crocante e sequinho",
+    "instructions": "cortar e fritar 3 kilos de frango. Servir com coquinha gelada",
+    "author_id": "1"
 }
