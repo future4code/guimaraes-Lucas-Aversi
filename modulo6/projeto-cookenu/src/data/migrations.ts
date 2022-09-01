@@ -26,11 +26,12 @@ const createTables = () => connection
    );
 
    CREATE TABLE IF NOT EXISTS cookenu_follows(
-      id VARCHAR(255) PRIMARY KEY,
+      id VARCHAR(255) UNIQUE,
       user_id VARCHAR(255) NOT NULL,
       following_id VARCHAR(255) NOT NULL,
       FOREIGN KEY (user_id) REFERENCES cookenu_users (id),
-      FOREIGN KEY (following_id) REFERENCES cookenu_users (id)
+      FOREIGN KEY (following_id) REFERENCES cookenu_users (id),
+      PRIMARY KEY (user_id, following_id)
    );
    
    `)

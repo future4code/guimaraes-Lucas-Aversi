@@ -57,6 +57,14 @@ export class Recipes {
     instructions: string,
     author_id:string,
   }
+
+  export interface recipeEditInputDTO{
+    id:string,
+    title?:string,
+    description?:string,
+    instructions?:string,
+    author_id:string
+  }
   
   export type recipe  = {
     id: string,
@@ -64,5 +72,10 @@ export class Recipes {
     description: string,
     instructions: string,
     created_at?:string,
+    author_id:string
+  }
+  
+  export interface recipeDeleteInputDTO{
+    id:string,
     author_id:string
   }

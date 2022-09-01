@@ -42,3 +42,13 @@ export class Follow {
     user_id: string,
     following_id: string
   }
+
+  export interface unfollowInputDTO{
+    user_id:string,
+    following_id:string
+  }
+
+  export type unfollow  = {
+    user_id: string,
+    following_id: string
+  }
