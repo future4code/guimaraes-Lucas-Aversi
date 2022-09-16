@@ -1,4 +1,4 @@
 export type AuthenticationData = {
     id: string;
-    role: string;
+    role: string | undefined|null;
   };

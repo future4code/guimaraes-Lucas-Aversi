@@ -1,13 +1,11 @@
 
 
-
-
 import { user, User } from "../../model/User";
 import { BaseDatabase } from "./BaseDatabase";
 import { CustomError } from "../../error/customError";
 
 export class UserDatabase extends BaseDatabase {
-  private static TABLE_NAME = "cookenu_users";
+  private static TABLE_NAME = "dogWalking_users";
 
   public signup = async (user: user): Promise<void>=> {
     try {

@@ -6,7 +6,7 @@ export class CustomError extends Error {
 
 export class CustomError2 extends Error {
     constructor(statusCode:number, message:string) {
-      super(message)
+      super(message, statusCode)
     } 
 }
 
