@@ -1,36 +1,42 @@
 [
 	{
 		"id" : "1",
-		"date" : "1991-02-26",
+		"created_at" : "1991-02-26",
 		"status" : "DONE",
 		"latitude" : "-23.588333",
 		"longitude":"-46.658890",
+		"walk_type":"60 min",
         "walk_date":"1991-02-26",
         "start_walk":"08:00:00",
         "finish_walk":"09:00:00",
         "quantity_dogs": 1,
+		"final_price":"35,00",
         "client_id":"1"
 	},	{
 		"id" : "2",
-		"date" : "2022-04-15",
+		"created_at" : "2022-04-15",
 		"status" : "DONE",
 		"latitude" : "-23.567897",
 		"longitude":"-50.252324",
+		"walk_type":"60 min",
         "walk_date":"2022-04-17",
         "start_walk":"10:00:00",
         "finish_walk":"11:00:00",
         "quantity_dogs": 3,
+		"final_price":"55,00",
         "client_id":"2"
 	},	{
 		"id" : "3",
-		"date" : "2022-04-22",
+		"created_at" : "2022-04-22",
 		"status" : "TO DO",
 		"latitude" : "-23.888888",
 		"longitude":"-50.123456",
+		"walk_type":"30 min",
         "walk_date":"2022-12-25",
         "start_walk":"11:00:00",
-        "finish_walk":"12:30:00",
+        "finish_walk":"11:30:00",
         "quantity_dogs": 1,
+		"final_price":"20,00",
         "client_id":"1"
 	}   
 ]

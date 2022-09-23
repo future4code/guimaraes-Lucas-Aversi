@@ -3,7 +3,10 @@ ENDPOINTS CONCLUIDOS
 => SIGNUP - OK
 => LOGIN - OK
 
-BUGS A CORRIGIR
 
-BUG DO SIGNUP AO PASSAR ADM adm ADm
+VALIDAÇÕES HORARIOS E DIAS DOS PASSEIOS
+ok horarios, fazer checagem se a data ja existe
 
+data formatada?
+
+TESTES?

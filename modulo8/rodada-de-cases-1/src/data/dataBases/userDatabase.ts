@@ -2,7 +2,7 @@
 
 import { user, User } from "../../model/User";
 import { BaseDatabase } from "./BaseDatabase";
-import { CustomError } from "../../error/customError";
+import { CustomError} from "../../error/customError";
 
 export class UserDatabase extends BaseDatabase {
   private static TABLE_NAME = "dogWalking_users";
@@ -18,15 +18,15 @@ export class UserDatabase extends BaseDatabase {
         role:user.role
       })
       .into(UserDatabase.TABLE_NAME);      
-    } catch (error: any) {
-      throw new CustomError(error.sqlMessage);
-    }
-  }
+    }catch (error:any) {
+      throw new CustomError(error.statusCode, error.sqlMessage || error.message);
+    };;
+  };;
 
   public getUserAll = async  ():Promise <User[]>=> {
-    const user = await UserDatabase.connection(UserDatabase.TABLE_NAME).select().orderBy("name")
-    return user
-  }
+    const user = await UserDatabase.connection(UserDatabase.TABLE_NAME).select().orderBy("name");
+    return user;
+  };;
 
   public findUserByEmail = async (email: string) => {
     try {
@@ -35,9 +35,9 @@ export class UserDatabase extends BaseDatabase {
       .where({email});
 
       return result[0];
-    } catch (error: any) {
-      throw new CustomError(error.sqlMessage);
-    };
+    }catch (error: any) {
+      throw new CustomError(error.statusCode, error.sqlMessage || error.message);
+    };;
   };;
 
   public findUserById = async (id: string) => {
@@ -47,24 +47,8 @@ export class UserDatabase extends BaseDatabase {
       .where({id});
 
       return result[0];
-    } catch (error: any) {
-      throw new CustomError(error.sqlMessage);
-    };
+    }catch (error: any) {
+      throw new CustomError(error.statusCode, error.sqlMessage || error.message);
+    };;
   };;
-
-
-  public getProfileById = async (id: string) => {
-    try {
-      const result = await UserDatabase.connection(UserDatabase.TABLE_NAME)
-      .select("id", "name", "email")
-      .where("id", "like", id);
-
-      return result[0];
-    } catch (error: any) {
-      throw new CustomError(error.sqlMessage);
-    };
-  };;
-
-
-
 };;;

@@ -1,6 +1,4 @@
-//_________________________________________USER ENDPOINTS______________________________________//
-
-//_________________________________________USER ENDPOINTS______________________________________//
+//_________________________________________ USER ENDPOINTS ______________________________________//
 
 //1 - Signup
 //Its possible define users roles if wanted => "role":"admin". This information is optional and if none value was give by body, user will assume "normal" as role.
@@ -9,8 +7,8 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "Aversin", 
-   "email": "aversin@email.com",
+   "name": "Aversi", 
+   "email": "abcemail.com",
    "password": "123456",
    "role":"admin"
    
@@ -24,15 +22,56 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "aversin@email.com", 
-   "password": "123456"
+   "email": "aversidi@email.com", 
+   "password": "123457"
 }
 
 ###
 
 // 3 Get all users - requires admin authorization
-GET http://localhost:3003/users/allUsers
+
+GET http://localhost:3003/users/getAll
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NDg4ZmIzLTZkZGYtNDk1Yi05NGYxLTEzMDIxNzU4MmJjNiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MzM2NTk5MiwiZXhwIjoxNjYzMzg3NTkyfQ.dsZKCjXSF6G8Cprp755g7vOqjC8ZD2bntKlfWqNKDfU
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU5ZGJjYzY5LWJkNWUtNGM1NS1hZGQwLTgxNDljMjRhNzg4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MzgwMzQ1MywiZXhwIjoxNjYzODI1MDUzfQ.5DxL1FeSJzaZ2HZcgjrgxfEYe1bURW2OPgn2BRy6jK4
+
 ###
 
+
+//_________________________________________ WALK ENDPOINTS ______________________________________//
+
+
+// 1 - Get all walks
+GET http://localhost:3003/walks/getAll
+Content-Type: application/json
+
+###
+
+// 2 - Create new walk
+// Final price relies on walk_type only to values are possible, "60 min" or "30 min"
+// Also depends on quantity_dogs, make sure the value is between 1 to 10
+POST http://localhost:3003/walks/newWalk/1
+Content-Type: application/json
+
+{
+   "latitude": "TESTEEEEEEEEEEEEEEEEEEEEEEE",
+   "longitude": "TESTEEEEEEEEEEEEEEEEEEEEEE",
+   "walk_type":"30 min", 
+   "walk_date": "1992-02-26",
+   "start_walk": "22:20:00", 
+   "finish_walk": "22:50:00", 
+   "quantity_dogs": 3
+}
+
+###
+
+// 3 - start a walk
+PUT http://localhost:3003/walks/startWalk/3
+Content-Type: application/json
+
+###
+
+// 4 - finish a walk
+PUT http://localhost:3003/walks/finishWalk/3
+Content-Type: application/json
+
+###
