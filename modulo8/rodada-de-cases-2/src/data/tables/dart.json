@@ -1,0 +1,30 @@
+[
+	{
+		"id" : "1",
+		"game_id" : "1",
+		"athlete" : "Aversi",
+		"first_attempt" : "10.45",
+		"second_attempt":"09.45",
+		"third_attempt":"06.78",
+        "best_attempt":"06.78",
+        "unit_measure":"m"
+	},	{
+		"id" : "2",
+		"game_id" : "1",
+		"athlete" : "joão",
+		"first_attempt" : "15.45",
+		"second_attempt":"08.45",
+		"third_attempt":"07.00",
+        "best_attempt":"15.45",
+        "unit_measure":"meter"
+	},	{
+		"id" : "3",
+		"game_id" : "1",
+		"athlete" : "Carlos",
+		"first_attempt" : "10.45",
+		"second_attempt":"9.45",
+		"third_attempt":"4.78",
+        "best_attempt":"10.45",
+        "unit_measure":"meter"
+	}   
+]

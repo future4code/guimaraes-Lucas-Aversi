@@ -1,0 +1,65 @@
+//_________________________________________ COMPETITION ENDPOINTS ______________________________________//
+
+//1 - Create a new competition
+
+POST http://localhost:3003/competition/create
+Content-Type: application/json
+
+{
+   "name": "200 metros rasos"
+   
+}
+
+###
+
+
+
+// 2 Get all competitions
+ - requires admin authorization
+
+GET http://localhost:3003/competition/getAll
+Content-Type: application/json
+
+###
+
+//1 - Register race data
+
+POST http://localhost:3003/competition/race/register/2
+Content-Type: application/json
+
+{
+   "athlete": "cahje",
+   "value":"16.25",
+   "unit_measure":"seconds"
+   
+}
+
+###
+
+// 3 Get all races 
+Content-Type: application/json
+
+###
+
+
+//1 - register dart data
+POST http://localhost:3003/competition/dart/register/1
+Content-Type: application/json
+
+{
+   "athlete": "qweqcasasasascascweqw",
+   "first_attempt":"50.65",
+   "second_attempt":"80.65",
+   "third_attempt":"17.65",
+   "unit_measure":"100.00"
+   
+}
+
+###
+
+// 3 Get all dart competitions
+
+GET http://localhost:3003/competition/dart/getAll
+Content-Type: application/json
+
+###
