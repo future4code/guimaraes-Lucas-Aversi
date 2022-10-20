@@ -1,0 +1,49 @@
+
+//POKEMON GO - API DOCUMENTATION
+
+// 1 - BASIC ENDPOINTS
+// 1.1 - Get all pokemons
+
+GET http://localhost:3003/pokemon
+Content-Type: application/json
+
+###
+
+// 1.2- Get pokemon by id
+
+GET http://localhost:3003/pokemon/id/2
+Content-Type: application/json
+
+###
+
+
+// 2 - Poke query - Our API supports some features. You can filter, sort, order and paginate .
+
+// 2.1 - Filtering - its possible filter pokemons by name/type/generation using queries
+
+GET http://localhost:3003/pokemon?name=dra&type=dragon&generation=1
+Content-Type: application/json
+###
+
+// 2.2 - Sorting  - is also possible sort by id,name,generation,type using query.
+
+
+GET http://localhost:3003/pokemon?name=dra&type=dragon&generation=1&sort=name
+Content-Type: application/json
+###
+
+// 2.2 - Ordering  - is also possible order by asc or desc. Asc set as default value.
+
+
+GET http://localhost:3003/pokemon?name=dra&type=dragon&generation=1&sort=name&order=desc
+Content-Type: application/json
+###
+
+//2.3 Pagination - our API suports pagination using size for how much itens per page, and page to navigate between
+
+
+GET http://localhost:3003/pokemon?size=20&page=1
+Content-Type: application/json
+
+###
+
