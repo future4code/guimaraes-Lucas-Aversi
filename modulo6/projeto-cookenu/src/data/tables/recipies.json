@@ -1,0 +1,45 @@
+[
+    {
+        "id":"1",
+        "title":"Receita #1 do restaurante do Aversi",
+        "description":"Esta é a receita número 1 do restaurante do Aversi",
+        "instructions":"Até parece que eu vou contar né",
+        "created_at":"2022-02-26 23:59:59",
+        "author_id":"1"
+    },    {
+        "id":"2",
+        "title":"Receita #2 do restaurante do Aversi",
+        "description":"Esta é a receita número 2 do restaurante do Aversi",
+        "instructions":"Até parece que eu vou contar né",
+        "created_at":"2022-02-26 17:05:30",
+        "author_id":"1"
+    },    {
+        "id":"3",
+        "title":"Receita #3 do restaurante do Aversi",
+        "description":"Esta é a receita número 3 do restaurante do Aversi",
+        "instructions":"Até parece que eu vou contar né",
+        "created_at":"2022-02-26 12:45:05",
+        "author_id":"1"
+    },    {
+        "id":"4",
+        "title":"Sopa de Pedra",
+        "description":"A famosa sopa de pedra da lenda dos pobres",
+        "instructions":"Junte 1 litro de água, 3 pedras numa panela e mexa em fogo baixo até ficar gostosinho. Sal e pimenta a gosto",
+        "created_at":"2022-05-13 06:00:00",
+        "author_id":"2"
+    },    {
+        "id":"5",
+        "title":"Receita da  Vidal",
+        "description":"Heloisa Vida me ensinou sua famosa receita",
+        "instructions":"Até parece que eu vou contar né",
+        "created_at":"1998-07-10 08:00:00",
+        "author_id":"3"
+    },{
+        "id":"6",
+        "title":"Receita da  Vidal - Bisnaga com queijo derretido",
+        "description":"Heloisa Vida me ensinou sua famosa receita",
+        "instructions":"Pegar uma bisnaguinha, pegar 5 kilos de queijo, pegar um prato, abrir a bisnaga, colocar os 5 kilos de queijo dentro das bisnaga, e derreter o queijo no forno microondas em 20 minutos. Servir enquanto está quente.",
+        "created_at":"2022-08-26 18:30:00",
+        "author_id":"3"
+    }
+]

@@ -1,0 +1,155 @@
+//_________________________________________USER ENDPOINTS______________________________________//
+
+//1 - Signup
+//Its possible define users roles if wanted => "role":"admin". This information is optional and if none value was give by body, user will assume normal as role.
+
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+   "name": "def", 
+   "email": "ghi@email.com",
+   "password": "123456",
+   "role": "admin"
+}
+
+###
+
+// 2 - Login
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+   "email": "ghi@email.com", 
+   "password": "123456"
+}
+
+###
+
+//3 - GET ALL USERS - requires role authorization if user is not an Admin, he cant access this feature.
+
+GET     http://localhost:3003/users/all
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+###
+
+//3.1 - GET USER BY ID (PROFILE)  - requires authorization.
+
+GET     http://localhost:3003/users/3
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+
+
+###
+
+//3.2 - GET OWN PROFILE - requires authorization;
+
+GET     http://localhost:3003/users/profile
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+###
+
+
+//4 - FOLLOW SOMEONE - requires authorization.
+
+POST     http://localhost:3003/users/follow
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+
+{
+   "user_id": "2", 
+   "following_id": "1"
+}
+###
+
+//5 UNFOLLOW SOMEONE
+
+DELETE http://localhost:3003/users/unfollow/2
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+
+{
+   "following_id": "1"
+}
+
+###
+
+//6 - GET ALL FOLLOWS - requires authorization;
+
+GET     http://localhost:3003/users/allfollows
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+###
+
+//6.1 - GET FOLLOWS BY ID - requires authorization;
+GET     http://localhost:3003/users/follow/1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+###
+
+//7 - GET FEED BY ID  - requires authorization. implants authorization
+
+GET     http://localhost:3003/users/feed/1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NDg5OCwiZXhwIjoxNjYyMDA1Njk4fQ.v3h1tA4OIgnnjB7IEgADrd-EeNShCQ7fLQhl2SlnRgk
+###
+
+
+
+
+//_________________________________________RECIPES ENDPOINTS______________________________________//
+
+//1 - GET ALL RECIPES - requires authorization.
+
+GET     http://localhost:3003/recipes/all
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NTM1NSwiZXhwIjoxNjYyMDA2MTU1fQ.t4S3GgG4S-Ajlolv4Ql2C28m2O46Faxz3HW8D2EksQ4
+
+###
+
+//1.2 - GET RECIPE BY ID - requires authorization.
+
+
+GET     http://localhost:3003/recipes/1
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NTM1NSwiZXhwIjoxNjYyMDA2MTU1fQ.t4S3GgG4S-Ajlolv4Ql2C28m2O46Faxz3HW8D2EksQ4
+
+###
+
+//1.3 - GET RECIPE BY AUTHOR - requires authorization. implant autorization
+
+
+GET     http://localhost:3003/recipes/author/773a314f-1b70-488c-851c-a9fb0425a492
+###
+
+// 2 - CREATE NEW RECIPE - requires authorization
+
+POST http://localhost:3003/recipes/create
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NTM1NSwiZXhwIjoxNjYyMDA2MTU1fQ.t4S3GgG4S-Ajlolv4Ql2C28m2O46Faxz3HW8D2EksQ4
+
+{
+    "title": "Delícia da semana",
+    "description": "Strogonoff com batata frita",
+    "instructions": "Ir no mercado....",
+    "author_id": "773a314f-1b70-488c-851c-a9fb0425a492"
+}
+###
+
+// 4 - EDIT RECIPE - requires authorization
+
+PUT  http://localhost:3003/recipes/editRecipe/773a314f-1b70-488c-851c-a9fb0425a492/c39229d2-92f0-409a-80bf-5e27339e682f
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3M2EzMTRmLTFiNzAtNDg4Yy04NTFjLWE5ZmIwNDI1YTQ5MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MTk5NTM1NSwiZXhwIjoxNjYyMDA2MTU1fQ.t4S3GgG4S-Ajlolv4Ql2C28m2O46Faxz3HW8D2EksQ4
+
+{
+    "title": "modificação da receita 2",
+    "description": "esta receita foi modificada a meu bel prazer",
+    "instructions": "nada de nada"
+}
+###
+
+//5 DELETE RECIPE BY ID
+
+DELETE http://localhost:3003/recipes/2
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmYWUyMTE1LWNmOWMtNGQ0NS04OGUwLTJlMWJiYzA3MDY5YyIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjE5ODE4MDEsImV4cCI6MTY2MTk5MjYwMX0.D-ZAiQ1q1ljXRwXdfFeM9Do00vDCs_GQqtscaSwclxI
+
+{
+   "id": "828a4840-e61c-4282-9afb-b59a9ce3a74d"
+}
+
+###
