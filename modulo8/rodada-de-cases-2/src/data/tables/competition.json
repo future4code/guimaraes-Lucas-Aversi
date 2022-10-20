@@ -1,0 +1,20 @@
+[
+	{
+		"id" : "1",
+		"name" : "100 meters semi-finals",
+		"status" : "OPEN"
+	},
+	{
+		"id" : "2",
+		"name" : "Dart Finals",
+		"status" : "OPEN"
+
+	},
+	{
+		"id" : "3",
+		"name" : "half-marathon",
+		"status" : "FINISHED"
+
+	}
+	
+]
