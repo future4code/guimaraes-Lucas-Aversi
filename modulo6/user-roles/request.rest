@@ -1,0 +1,31 @@
+ 
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "teste", 
+   "nickname": "testinho", 
+   "email": "teste@gmail.com" ,
+   "password": "eu",
+   "role": "admin"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "teste@gmail.com", 
+   "password": "eu"
+}
+
+###
+
+
+PUT http://localhost:3003/user/edit/
+Content-Type: application/json
+
+{
+   "name": "Harry Osbourne" 
+}
